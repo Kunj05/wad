@@ -1,0 +1,28 @@
+[
+    {
+      "name": "Wireless Mouse",
+      "price": 25.99,
+      "image": "https://picsum.photos/200"
+    },
+    {
+      "name": "Bluetooth Headphones",
+      "price": 59.99,
+      "image": "https://picsum.photos/200"
+    },
+    {
+      "name": "Mechanical Keyboard",
+      "price": 89.99,
+      "image": "https://picsum.photos/200"
+    },
+    {
+      "name": "Wheel Chair",
+      "price": 9.99,
+      "image": "https://picsum.photos/200"
+    },
+    {
+      "name": "Skate Board",
+      "price": 39.99,
+      "image": "https://picsum.photos/200"
+    }
+  ]
+  

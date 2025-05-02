@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PICT B.E. Course Structure</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+        h1 {
+            text-align: center;
+        }
+        .year-section {
+            margin: 20px 0;
+        }
+        .collapsible {
+            background-color: #444;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-align: left;
+            font-size: 1.2rem;
+            width: 100%;
+            border: none;
+        }
+        .collapsible.active, .collapsible:hover {
+            background-color: #555;
+        }
+        .content {
+            display: none;
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+        .content ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .content li {
+            margin: 10px 0;
+        }
+        h3 {
+            margin: 5px 0;
+        }
+        p {
+            margin: 5px 0;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>PICT B.E. Course Structure</h1>
+
+    <!-- First Year (FE) -->
+    <div class="year-section" id="FE">
+        <h2 class="collapsible">First Year (FE)</h2>
+        <div class="content">
+            <ul>
+                <li>
+                    <h3>Subject 1: Mathematics</h3>
+                    <p>Brief description about Mathematics subject.</p>
+                </li>
+                <li>
+                    <h3>Subject 2: Physics</h3>
+                    <p>Brief description about Physics subject.</p>
+                </li>
+                <li>
+                    <h3>Subject 3: Chemistry</h3>
+                    <p>Brief description about Chemistry subject.</p>
+                </li>
+                <li>
+                    <h3>Subject 4: Engineering Mechanics</h3>
+                    <p>Brief description about Engineering Mechanics subject.</p>
+                </li>
+                <li>
+                    <h3>Subject 5: Computer Fundamentals</h3>
+                    <p>Brief description about Computer Fundamentals subject.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Second Year (SE) -->
+    <div class="year-section" id="SE">
+        <h2 class="collapsible">Second Year (SE)</h2>
+        <div class="content">
+            <ul>
+                <li>
+                    <h3>Subject 1: Computer Programming</h3>
+                    <p>Brief description about Computer Programming subject.</p>
+                </li>
+                <li>
+                    <h3>Subject 2: Data Structures</h3>
+                    <p>Brief description about Data Structures subject.</p>
+                </li>
+                <li>
+                    <h3>Subject 3: Digital Electronics</h3>
+                    <p>Brief description about Digital Electronics subject.</p>
+                </li>
+                <li>
+                    <h3>Subject 4: Discrete Mathematics</h3>
+                    <p>Brief description about Discrete Mathematics subject.</p>
+                </li>
+                <li>
+                    <h3>Subject 5: Microprocessor</h3>
+                    <p>Brief description about Microprocessor subject.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Third Year (TE) -->
+    <div class="year-section" id="TE">
+        <h2 class="collapsible">Third Year (TE)</h2>
+        <div class="content">
+            <ul>
+                <li>
+                    <h3>Subject 1: Algorithms</h3>
+                    <p>Brief description about Algorithms subject.</p>
+                </li>
+                <li>
+                    <h3>Subject 2: Operating Systems</h3>
+                    <p>Brief description about Operating Systems subject.</p>
+                </li>
+                <li>
+                    <h3>Subject 3: Computer Networks</h3>
+                    <p>Brief description about Computer Networks subject.</p>
+                </li>
+                <li>
+                    <h3>Subject 4: Software Engineering</h3>
+                    <p>Brief description about Software Engineering subject.</p>
+                </li>
+                <li>
+                    <h3>Subject 5: Database Management Systems</h3>
+                    <p>Brief description about Database Management Systems subject.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Final Year (BE) -->
+    <div class="year-section" id="BE">
+        <h2 class="collapsible">Final Year (BE)</h2>
+        <div class="content">
+            <ul>
+                <li>
+                    <h3>Subject 1: Software Engineering</h3>
+                    <p>Brief description about Software Engineering subject.</p>
+                </li>
+                <li>
+                    <h3>Subject 2: Artificial Intelligence</h3>
+                    <p>Brief description about Artificial Intelligence subject.</p>
+                </li>
+                <li>
+                    <h3>Subject 3: Cloud Computing</h3>
+                    <p>Brief description about Cloud Computing subject.</p>
+                </li>
+                <li>
+                    <h3>Subject 4: Machine Learning</h3>
+                    <p>Brief description about Machine Learning subject.</p>
+                </li>
+                <li>
+                    <h3>Subject 5: Data Science</h3>
+                    <p>Brief description about Data Science subject.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="./jquery-3.7.1.min.js"></script>
+
+    <!-- CDN for jQuery -->
+    <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> -->
+    
+    <script>
+        // jQuery to handle collapsible sections
+        $(document).ready(function() {
+            // Check if jQuery is loaded
+            console.log($);  // This should log the jQuery function
+
+            $(".collapsible").click(function() {
+                $(this).toggleClass("active");
+                var content = $(this).next();
+                if (content.css("display") === "none") {
+                    content.slideDown();
+                } else {
+                    content.slideUp();
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
+
+<!-- console.log($) -->

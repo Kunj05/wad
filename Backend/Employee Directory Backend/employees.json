@@ -1,0 +1,51 @@
+[
+    {
+      "id": 1,
+      "name": "John Doe",
+      "designation": "Software Engineer",
+      "department": "Engineering",
+      "salary": 80000,
+      "profileImage": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "designation": "Project Manager",
+      "department": "Management",
+      "salary": 90000,
+      "profileImage": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 3,
+      "name": "Sara Johnson",
+      "designation": "Designer",
+      "department": "Design",
+      "salary": 70000,
+      "profileImage": "https://via.placeholder.com/150"
+    },    
+    {
+        "id": 4,
+        "name": "John Doe",
+        "designation": "Software Engineer",
+        "department": "Engineering",
+        "salary": 80000,
+        "profileImage": "https://via.placeholder.com/150"
+      },
+      {
+        "id": 5,
+        "name": "Jane Smith",
+        "designation": "Project Manager",
+        "department": "Management",
+        "salary": 90000,
+        "profileImage": "https://via.placeholder.com/150"
+      },
+      {
+        "id": 6,
+        "name": "Sara Johnson",
+        "designation": "Designer",
+        "department": "Design",
+        "salary": 70000,
+        "profileImage": "https://via.placeholder.com/150"
+      }
+  ]
+  

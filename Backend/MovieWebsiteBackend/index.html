@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Movie Reviews</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background-color: #222;
+      color: #fff;
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .movie-container {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 1rem;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .movie-card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      width: calc(33.333% - 1rem);
+    }
+
+    .movie-info {
+      padding: 1rem;
+    }
+
+    .movie-info h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .genre {
+      font-weight: bold;
+      color: #666;
+      margin-bottom: 0.5rem;
+    }
+
+    .summary, .review {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Responsive layout: stack cards on smaller screens */
+    @media (max-width: 900px) {
+      .movie-card {
+        width: calc(50% - 1rem);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .movie-card {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Top Movie Reviews</h1>
+  </header>
+
+  <div class="movie-container">
+    <!-- Movie 1 -->
+    <div class="movie-card">
+      <img src="https://picsum.photos/200/300" alt="Movie 1 Poster" height="230px"/>
+      <div class="movie-info">
+        <h2>The Grand Adventure</h2>
+        <p class="genre">Adventure, Drama</p>
+        <p class="summary">A group of friends set out to explore the unknown in a breathtaking journey.</p>
+        <p class="review">"An epic tale of courage and discovery. Stunning visuals and heartfelt storytelling."</p>
+      </div>
+    </div>
+
+    <!-- Movie 2 -->
+    <div class="movie-card">
+      <img src="https://picsum.photos/200/300" alt="Movie 2 Poster" height="230px"/>
+      <div class="movie-info">
+        <h2>Laugh Till It Hurts</h2>
+        <p class="genre">Comedy</p>
+        <p class="summary">A quirky family gets into a series of hilarious misadventures.</p>
+        <p class="review">"A feel-good comedy with sharp wit and lovable characters."</p>
+      </div>
+    </div>
+
+    <!-- Movie 3 -->
+    <div class="movie-card">
+      <img src="https://picsum.photos/200/300" alt="Movie 3 Poster" height="230px"/>
+      <div class="movie-info">
+        <h2>Silent Shadows</h2>
+        <p class="genre">Horror, Thriller</p>
+        <p class="summary">When night falls, terror awakens in this gripping haunted house story.</p>
+        <p class="review">"Chilling from start to finish. Keeps you on the edge of your seat."</p>
+      </div>
+    </div>
+    <div class="movie-card">
+        <img src="https://picsum.photos/200/300" alt="Movie 3 Poster" height="230px"/>
+        <div class="movie-info">
+          <h2>Silent Shadows</h2>
+          <p class="genre">Horror, Thriller</p>
+          <p class="summary">When night falls, terror awakens in this gripping haunted house story.</p>
+          <p class="review">"Chilling from start to finish. Keeps you on the edge of your seat."</p>
+        </div>
+      </div>
+  
+
+    <!-- Movie 4 -->
+    <div class="movie-card">
+      <img src="https://picsum.photos/200/300" alt="Movie 4 Poster" height="230px"/>
+      <div class="movie-info">
+        <h2>Future Echoes</h2>
+        <p class="genre">Sci-Fi</p>
+        <p class="summary">A scientist races against time to prevent a paradox that could erase the world.</p>
+        <p class="review">"Mind-bending plot twists and stunning special effects make this a sci-fi gem."</p>
+      </div>
+    </div>
+
+    <!-- Movie 5 -->
+    <div class="movie-card">
+      <img src="https://picsum.photos/200/300" alt="Movie 5 Poster" height="230px"/>
+      <div class="movie-info">
+        <h2>Hearts Apart</h2>
+        <p class="genre">Romance, Drama</p>
+        <p class="summary">Two lovers from different worlds fight to keep their bond alive.</p>
+        <p class="review">"Emotionally powerful with standout performances. A love story that lingers."</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    console.log("Movie review site loaded.");
+  </script>
+</body>
+</html>

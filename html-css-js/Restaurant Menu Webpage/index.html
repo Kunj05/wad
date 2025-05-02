@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC Delights - Restaurant Menu</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f5f0;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #d35400;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        /* Introduction Section */
+        .intro {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+        
+        .intro h3 {
+            color: #d35400;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        /* Popular Dishes Section */
+        .popular-dishes {
+            margin-bottom: 40px;
+        }
+        
+        .popular-dishes h3 {
+            color: #d35400;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .dish-list {
+            list-style-type: none;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .dish-list li {
+            padding: 10px 0;
+            font-size: 1.2rem;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        
+        .dish-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .dish-rank {
+            background-color: #d35400;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+        
+        /* Cuisines Section */
+        .cuisines {
+            margin-bottom: 40px;
+        }
+        
+        .cuisines h3 {
+            color: #d35400;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .cuisine-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .cuisine-item {
+            background-color: white;
+            padding: 15px 25px;
+            border-radius: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            font-weight: bold;
+        }
+        
+        /* Menu Section */
+        .menu {
+            margin-bottom: 60px;
+        }
+        
+        .menu h3 {
+            color: #d35400;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+        
+        .menu-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .menu-table th {
+            background-color: #d35400;
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+        
+        .menu-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            vertical-align: top;
+        }
+        
+        .menu-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .menu-table tr:hover {
+            background-color: #f9f9f9;
+        }
+        
+        .dish-image {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        
+        .dish-name {
+            font-weight: bold;
+            color: #d35400;
+            font-size: 1.1rem;
+        }
+        
+        .dish-price {
+            font-weight: bold;
+            color: #27ae60;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .menu-table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+
+        .navbar {
+            background-color: #c0392b;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .restaurant-title {
+            color: white;
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #f39c12;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <h1 class="restaurant-title">ABC Delights</h1>
+            <div class="nav-links">
+                <a href="#" class="active">Home</a>
+                <a href="#menu">Menu</a>
+                <a href="#about">About</a>
+                <a href="#contact">Reservations</a>
+                <a href="#special">Special Offers</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Welcome to ABC Delights</h2>
+            <p>Where every dish tells a story of passion and tradition</p>
+        </div>
+    </section>
+    
+    <div class="container">
+        <section class="intro">
+            <h3>Our Restaurant</h3>
+            <p>Welcome to ABC Delights, where we bring you an unforgettable dining experience. Our chef, with over 20 years of international experience, crafts each dish with precision and love, using only the freshest ingredients sourced from local farmers and trusted suppliers.</p>
+            <p style="margin-top: 15px;">We take pride in our food quality assurance program that ensures every ingredient meets our high standards before it reaches your plate. From farm to table, we maintain complete transparency in our cooking process.</p>
+        </section>
+        
+        <section class="popular-dishes">
+            <h3>Our Top Dishes</h3>
+            <ul class="dish-list">
+                <li><span class="dish-rank">1</span> Paneer Tikka - Marinated cottage cheese grilled to perfection</li>
+                <li><span class="dish-rank">2</span> Hyderabadi Biryani - Fragrant basmati rice with tender meat and aromatic spices</li>
+                <li><span class="dish-rank">3</span> Butter Chicken - Creamy tomato-based curry with succulent chicken</li>
+                <li><span class="dish-rank">4</span> Margherita Pizza - Classic Italian pizza with fresh basil and mozzarella</li>
+                <li><span class="dish-rank">5</span> Hakka Noodles - Stir-fried noodles with fresh vegetables</li>
+            </ul>
+        </section>
+        
+        <section class="cuisines">
+            <h3>Available Cuisines</h3>
+            <div class="cuisine-list">
+                <div class="cuisine-item">Indian</div>
+                <div class="cuisine-item">Italian</div>
+                <div class="cuisine-item">Chinese</div>
+                <div class="cuisine-item">Continental</div>
+                <div class="cuisine-item">Mexican</div>
+            </div>
+        </section>
+        
+        <section class="menu">
+            <h3>Our Menu</h3>
+            <table class="menu-table">
+                <thead>
+                    <tr>
+                        <th>Dish Image</th>
+                        <th>Dish Name</th>
+                        <th>Description</th>
+                        <th>Price (INR ₹)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Paneer Tikka" class="dish-image"></td>
+                        <td class="dish-name">Paneer Tikka</td>
+                        <td>Marinated cottage cheese cubes grilled with bell peppers and onions, served with mint chutney</td>
+                        <td class="dish-price">₹ 250</td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://images.unsplash.com/photo-1633945274309-2c16c9682a8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Hyderabadi Biryani" class="dish-image"></td>
+                        <td class="dish-name">Hyderabadi Biryani</td>
+                        <td>Fragrant basmati rice cooked with tender chicken/lamb and a blend of aromatic spices, served with raita</td>
+                        <td class="dish-price">₹ 350</td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Butter Chicken" class="dish-image"></td>
+                        <td class="dish-name">Butter Chicken</td>
+                        <td>Tandoori chicken in a creamy tomato-based curry, served with butter naan</td>
+                        <td class="dish-price">₹ 320</td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Margherita Pizza" class="dish-image"></td>
+                        <td class="dish-name">Margherita Pizza</td>
+                        <td>Classic Italian pizza with tomato sauce, fresh mozzarella, and basil</td>
+                        <td class="dish-price">₹ 400</td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Hakka Noodles" class="dish-image"></td>
+                        <td class="dish-name">Hakka Noodles</td>
+                        <td>Stir-fried noodles with fresh vegetables in a savory sauce</td>
+                        <td class="dish-price">₹ 280</td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://images.unsplash.com/photo-1559847844-5315695dadae?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Tandoori Chicken" class="dish-image"></td>
+                        <td class="dish-name">Tandoori Chicken</td>
+                        <td>Chicken marinated in yogurt and spices, cooked in a tandoor (clay oven)</td>
+                        <td class="dish-price">₹ 380</td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Pasta Alfredo" class="dish-image"></td>
+                        <td class="dish-name">Pasta Alfredo</td>
+                        <td>Fettuccine pasta in a creamy Parmesan sauce</td>
+                        <td class="dish-price">₹ 350</td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Spring Rolls" class="dish-image"></td>
+                        <td class="dish-name">Spring Rolls</td>
+                        <td>Crispy vegetable rolls served with sweet chili sauce</td>
+                        <td class="dish-price">₹ 220</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 ABC Delights. All rights reserved.</p>
+            <p>Contact us: info@abcdelights.com | +91 9876543210</p>
+        </div>
+    </footer>
+</body>
+</html>

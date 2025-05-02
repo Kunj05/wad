@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Song Details</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            padding: 6px;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <h1>Song Details</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Song Name</th>
+                <th>Film</th>
+                <th>Music Director</th>
+                <th>Singer</th>
+                <th>Actor</th>
+                <th>Actress</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% songs.forEach(song => { %>
+                <tr>
+                    <td><%= song.Songname %></td>
+                    <td><%= song.Film %></td>
+                    <td><%= song.Music_director %></td>
+                    <td><%= song.Singer %></td>
+                    <td><%= song.Actor || '-' %></td>
+                    <td><%= song.Actress || '-' %></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>

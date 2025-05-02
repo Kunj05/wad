@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Directory</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .employee-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .employee-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            text-align: center;
+            padding: 20px;
+            margin: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .employee-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+        .employee-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .employee-card p {
+            margin: 5px 0;
+            color: #666;
+        }
+        .employee-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <h1>Employee Directory</h1>
+    <div class="employee-grid" id="employeeGrid"></div>
+
+    <script>
+        // Fetch employee data from the API
+        fetch('http://localhost:3000/api/employees')
+            .then(response => response.json())
+            .then(employees => {
+                const grid = document.getElementById('employeeGrid');
+                employees.forEach(employee => {
+                    const card = document.createElement('div');
+                    card.className = 'employee-card';
+                    card.innerHTML = `
+                        <img src="${employee.profileImage}" alt="${employee.name}" />
+                        <h3>${employee.name}</h3>
+                        <p>${employee.designation}</p>
+                        <p>${employee.department}</p>
+                        <p>Salary: $${employee.salary}</p>
+                    `;
+                    grid.appendChild(card);
+                });
+            })
+            .catch(err => {
+                console.error('Failed to load employee data:', err);
+            });
+    </script>
+</body>
+</html>

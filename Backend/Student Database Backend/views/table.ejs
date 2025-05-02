@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Marks</title>
+</head>
+<body>
+    <h1>Student Marks</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Roll No</th>
+                <th>WAD</th>
+                <th>CC</th>
+                <th>DSBDA</th>
+                <th>CNS</th>
+                <th>AI</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% students.forEach(student => { %>
+                <tr>
+                    <td><%= student.Name %></td>
+                    <td><%= student.Roll_No %></td>
+                    <td><%= student.WAD_Marks %></td>
+                    <td><%= student.CC_Marks %></td>
+                    <td><%= student.DSBDA_Marks %></td>
+                    <td><%= student.CNS_Marks %></td>
+                    <td><%= student.AI_marks %></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>

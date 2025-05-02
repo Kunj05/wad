@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Catalog</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #bdbe92;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #ddd;
+            background-color: #fff;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        td img {
+            max-width: 100%;
+            height: auto;
+        }
+        td{
+            background-color: rgb(161, 193, 99);
+        }
+
+        .pagination {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .pagination button {
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .pagination button:hover:not(:disabled) {
+            background-color: #45a049;
+        }
+
+        .pagination button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        @media (max-width: 768px) {
+            table {
+                font-size: 14px;
+            }
+
+            th, td {
+                padding: 8px;
+            }
+
+            .pagination button {
+                padding: 8px 15px;
+                font-size: 14px;
+            }
+        }
+        @media (max-width: 480px) {
+            table {
+                font-size: 12px;
+            }
+
+            th, td {
+                padding: 5px;
+            }
+
+            .pagination button {
+                padding: 5px 10px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Product Catalog</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+            <tbody id="product-list">
+            </tbody>
+        </table>
+    </div>
+    <div class="pagination">
+        <button id="prev-btn" onclick="changePage('prev')">Previous</button>
+        <button id="next-btn" onclick="changePage('next')">Next</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+<script>
+const products = [
+    {
+        name: 'Wireless Headphones',
+        image: 'https://via.placeholder.com/100',
+        price: 7999,
+        description: 'Noise-cancelling over-ear headphones.'
+    },
+    {
+        name: 'Wireless Headphones',
+        image: 'https://via.placeholder.com/100',
+        price: 7999,
+        description: 'Noise-cancelling over-ear headphones.'
+    },
+    {
+        name: 'Smartwatch',
+        image: 'https://via.placeholder.com/100',
+        price: 12999,
+        description: 'Fitness tracking smartwatch.'
+    },
+    {
+        name: 'Smartwatch',
+        image: 'https://via.placeholder.com/100',
+        price: 12999,
+        description: 'Fitness tracking smartwatch.'
+    },
+    {
+        name: 'Gaming Mouse',
+        image: 'https://via.placeholder.com/100',
+        price: 2499,
+        description: 'Ergonomic gaming mouse.'
+    },
+    {
+        name: 'Laptop Stand',
+        image: 'https://via.placeholder.com/100',
+        price: 1999,
+        description: 'Adjustable aluminium stand.'
+    },
+    {
+        name: 'Wireless Headphones',
+        image: 'https://via.placeholder.com/100',
+        price: 7999,
+        description: 'Noise-cancelling over-ear headphones.'
+    },
+    {
+        name: 'Smartwatch',
+        image: 'https://via.placeholder.com/100',
+        price: 12999,
+        description: 'Fitness tracking smartwatch.'
+    },
+    {
+        name: 'Wireless Headphones',
+        image: 'https://via.placeholder.com/100',
+        price: 7999,
+        description: 'Noise-cancelling over-ear headphones.'
+    },
+    {
+        name: 'Smartwatch',
+        image: 'https://via.placeholder.com/100',
+        price: 12999,
+        description: 'Fitness tracking smartwatch.'
+    },
+    {
+        name: 'Gaming Mouse',
+        image: 'https://via.placeholder.com/100',
+        price: 2499,
+        description: 'Ergonomic gaming mouse.'
+    },
+    {
+        name: 'Laptop Stand',
+        image: 'https://via.placeholder.com/100',
+        price: 1999,
+        description: 'Adjustable aluminium stand.'
+    },
+    {
+        name: 'Wireless Headphones',
+        image: 'https://via.placeholder.com/100',
+        price: 7999,
+        description: 'Noise-cancelling over-ear headphones.'
+    },
+    {
+        name: 'Smartwatch',
+        image: 'https://via.placeholder.com/100',
+        price: 12999,
+        description: 'Fitness tracking smartwatch.'
+    },
+    {
+        name: 'Gaming Mouse',
+        image: 'https://via.placeholder.com/100',
+        price: 2499,
+        description: 'Ergonomic gaming mouse.'
+    },
+    {
+        name: 'Laptop Stand',
+        image: 'https://via.placeholder.com/100',
+        price: 1999,
+        description: 'Adjustable aluminium stand.'
+    }
+];
+
+    let currentPage=1;
+    const productsPerPage = 5;
+
+    function createTable(){
+        const tableBody= document.getElementById('product-list');
+        tableBody.innerHTML = '';
+
+        const start= (currentPage-1) * productsPerPage;
+        const end=start+ productsPerPage;
+        const paginatedProducts= products.slice(start, end);
+
+        paginatedProducts.forEach(product=>{
+            const row=document.createElement('tr')
+            row.innerHTML=`
+                <td><img src="${product.image}" alt="${product.name}" width="100" height="100"></td>
+                <td>${product.name}</td>
+                <td>₹${product.price}</td>
+                <td>${product.description}</td>
+            `;
+            tableBody.appendChild(row);
+        })
+        updatePagination()
+    };
+    function updatePagination(){
+        const totalPages= Math.ceil(products.length / productsPerPage);
+        const prevButton =document.getElementById('prev-btn')
+        const nextButton =document.getElementById('next-btn')
+
+        prevButton.disabled=currentPage==1;
+        nextButton.disabled=currentPage==totalPages;
+    }
+    function changePage(direction){
+        if(direction=='next' && currentPage*productsPerPage < products.length){
+            currentPage++;
+        }else if(direction=='prev' && currentPage>1 ){
+            currentPage--;
+        }
+        createTable();
+    }
+    createTable();
+</script>
+</html>

@@ -1,0 +1,44 @@
+[
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john@example.com",
+      "age": 28,
+      "profileImage": "https://picsum.photos/200"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "email": "jane@example.com",
+      "age": 34,
+      "profileImage": "https://picsum.photos/200"
+    },
+    {
+      "id": 3,
+      "name": "Bob Johnson",
+      "email": "bob@example.com",
+      "age": 40,
+      "profileImage": "https://picsum.photos/200"
+    },
+    {
+        "id": 4,
+        "name": "John Doe",
+        "email": "john@example.com",
+        "age": 28,
+        "profileImage": "https://picsum.photos/200"
+      },
+      {
+        "id": 5,
+        "name": "Jane Smith",
+        "email": "jane@example.com",
+        "age": 34,
+        "profileImage": "https://picsum.photos/200"
+      },
+      {
+        "id": 6,
+        "name": "Bob Johnson",
+        "email": "bob@example.com",
+        "age": 40,
+        "profileImage": "https://picsum.photos/200"
+      }
+]
