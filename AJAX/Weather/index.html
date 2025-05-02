@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weather App</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f2f6fc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+    }
+    input {
+      width: 80%;
+      padding: 10px;
+      margin-bottom: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      padding: 10px 16px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .result {
+      margin-top: 20px;
+    }
+    .error {
+      color: red;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Weather App</h2>
+    <input type="text" id="cityInput" placeholder="Enter city name" />
+    <button onclick="getWeather()">Get Weather</button>
+    <div class="result" id="weatherResult"></div>
+    <p class="error" id="errorMsg"></p>
+  </div>
+
+  <script>
+    const weatherData = {
+      "Mumbai": { temperature: 31, humidity: 65, condition: "Sunny" },
+      "Delhi": { temperature: 36, humidity: 40, condition: "Hazy" },
+      "Chennai": { temperature: 33, humidity: 70, condition: "Humid" },
+      "Bangalore": { temperature: 27, humidity: 55, condition: "Cloudy" },
+      "Kolkata": { temperature: 34, humidity: 60, condition: "Thunderstorm" },
+      "Pune": { temperature: 29, humidity: 50, condition: "Clear Sky" }
+    };
+
+    function getWeather() {
+      const city = document.getElementById("cityInput").value.trim();
+      const resultDiv = document.getElementById("weatherResult");
+      const errorDiv = document.getElementById("errorMsg");
+
+      resultDiv.innerHTML = "";
+      errorDiv.textContent = "";
+
+      if (city === "") {
+        errorDiv.textContent = "Please enter a city name.";
+        return;
+      }
+
+      setTimeout(() => {
+        const data = weatherData[city];
+
+        if (data) {
+          resultDiv.innerHTML = `
+            <h3>${city}</h3>
+            <p><strong>Temperature:</strong> ${data.temperature}°C</p>
+            <p><strong>Humidity:</strong> ${data.humidity}%</p>
+            <p><strong>Condition:</strong> ${data.condition}</p>
+          `;
+        } else {
+          errorDiv.textContent = "Weather data not found for this city.";
+        }
+      }, 500);
+    }
+  </script>
+</body>
+</html>
