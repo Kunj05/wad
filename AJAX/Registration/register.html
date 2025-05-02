@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+  <style>
+    body {
+      background: #ecf0f1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    form {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 450px;
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+    .error {
+      color: red;
+      font-size: 13px;
+      margin: -8px 0 8px 0;
+    }
+    .success {
+      color: green;
+      text-align: center;
+      margin-top: 10px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <form id="registerForm">
+    <h2>Registration Form</h2>
+
+    <input type="text" id="name" placeholder="Full Name" />
+    <p class="error" id="nameError"></p>
+
+    <input type="email" id="email" placeholder="Email" />
+    <p class="error" id="emailError"></p>
+
+    <input type="tel" id="mobile" placeholder="Mobile (10 digits)" />
+    <p class="error" id="mobileError"></p>
+
+    <input type="date" id="dob" />
+    <p class="error" id="dobError"></p>
+
+    <select id="city">
+      <option value="">-- Select City --</option>
+      <option value="Mumbai">Mumbai</option>
+      <option value="Delhi">Delhi</option>
+      <option value="Bangalore">Bangalore</option>
+      <option value="Chennai">Chennai</option>
+      <option value="Kolkata">Kolkata</option>
+      <option value="Pune">Pune</option>
+    </select>
+    <p class="error" id="cityError"></p>
+
+    <textarea id="address" placeholder="Address"></textarea>
+    <p class="error" id="addressError"></p>
+
+    <input type="text" id="username" placeholder="Username" />
+    <p class="error" id="usernameError"></p>
+
+    <input type="password" id="password" placeholder="Password" />
+    <p class="error" id="passwordError"></p>
+
+    <button type="submit">Register</button>
+    <p class="success" id="successMsg"></p>
+  </form>
+
+  <script>
+    const form = document.getElementById("registerForm");
+    const fields = ["name", "email", "mobile", "dob", "city", "address", "username", "password"];
+
+    const showError = (field, message) => {
+      document.getElementById(`${field}Error`).textContent = message;
+    };
+
+    const clearErrors = () => {
+      fields.forEach(field => showError(field, ""));
+      document.getElementById("successMsg").textContent = "";
+    };
+
+    const validate = (user) => {
+      let valid = true;
+
+      if (user.name.length < 3) {
+        showError("name", "Name must be at least 3 characters.");
+        valid = false;
+      }
+
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(user.email)) {
+        showError("email", "Invalid email format.");
+        valid = false;
+      }
+
+      if (!/^\d{10}$/.test(user.mobile)) {
+        showError("mobile", "Mobile number must be 10 digits.");
+        valid = false;
+      }
+
+      if (!user.dob) {
+        showError("dob", "Date of birth is required.");
+        valid = false;
+      }
+
+      if (!user.city) {
+        showError("city", "Please select a city.");
+        valid = false;
+      }
+
+      if (user.address.length < 10) {
+        showError("address", "Address must be at least 10 characters.");
+        valid = false;
+      }
+
+      if (user.username.length < 4) {
+        showError("username", "Username must be at least 4 characters.");
+        valid = false;
+      }
+
+      if (user.password.length < 6 ||
+        !/[A-Z]/.test(user.password) ||
+        !/[a-z]/.test(user.password) ||
+        !/[0-9]/.test(user.password)
+      ) {
+        showError("password", "Password must include uppercase, lowercase and number.");
+        valid = false;
+      }
+
+      return valid;
+    };
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        clearErrors();
+
+        const user = {};
+        fields.forEach(field => {
+            user[field] = document.getElementById(field).value.trim();
+        });
+
+        if (!validate(user)) return;
+
+        const users = JSON.parse(localStorage.getItem("users") || "[]");
+        users.push(user);
+        localStorage.setItem("users", JSON.stringify(users));
+
+        window.location.href = "login.html";
+    });
+  </script>
+</body>
+</html>
