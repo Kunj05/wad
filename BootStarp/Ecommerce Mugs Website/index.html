@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mugs Listing</title>
+  <link href="./css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body class="bg-light">
+  <div class="container-fluid my-4">
+    <div class="row">
+
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="m-0 fw-bold">Mugs</h2>
+        <div class="d-flex align-items-center">
+          <span class="me-2 text-muted">Sorted by:</span>
+          <select id="sortSelect" class="form-select w-auto">
+            <option value="popular">Popularity</option>
+            <option value="low">Low to High</option>
+            <option value="high">High to Low</option>
+          </select>
+        </div>
+      </div>
+      <p>Mugs and glass are sell great has gifts for friends and loved once on special occassion. Choose from many different size and styles to sell</p>
+
+      <!-- Filter Section -->
+      <div class="col-lg-2 mb-4">
+        <h5 onclick="toggleFilter('market')" class="d-flex justify-content-between align-items-center">Target Market <span id="arrow-market">&#9660;</span></h5>
+        <div id="group-market" class="ps-2">
+          <div class="form-check"><input class="form-check-input market-filter" type="checkbox" value="USA"> <label class="form-check-label">USA</label></div>
+          <div class="form-check"><input class="form-check-input market-filter" type="checkbox" value="Canada"> <label class="form-check-label">Canada</label></div>
+          <div class="form-check"><input class="form-check-input market-filter" type="checkbox" value="UK"> <label class="form-check-label">UK</label></div>
+          <div class="form-check"><input class="form-check-input market-filter" type="checkbox" value="India"> <label class="form-check-label">India</label></div>
+          <div class="form-check"><input class="form-check-input market-filter" type="checkbox" value="Germany"> <label class="form-check-label">Germany</label></div>
+          <div class="form-check"><input class="form-check-input market-filter" type="checkbox" value="France"> <label class="form-check-label">France</label></div>
+        </div>
+        <hr/>
+
+        <h5 onclick="toggleFilter('area')" class="d-flex justify-content-between align-items-center mt-4">Print Area <span id="arrow-area">&#9660;</span></h5>
+        <div id="group-area" class="ps-2">
+          <div class="form-check"><input class="form-check-input area-filter" type="checkbox" value="Wraparound"> <label class="form-check-label">Wraparound</label></div>
+          <div class="form-check"><input class="form-check-input area-filter" type="checkbox" value="Front Side"> <label class="form-check-label">Front Side</label></div>
+        </div>
+        <hr/>
+        <h5 onclick="toggleFilter('provider')" class="d-flex justify-content-between align-items-center mt-4">Print Providers <span id="arrow-provider">&#9660;</span></h5>
+        <div id="group-provider" class="ps-2">
+          <div class="form-check"><input class="form-check-input provider-filter" type="checkbox" value="ArtsAdd"> <label class="form-check-label">ArtsAdd</label></div>
+          <div class="form-check"><input class="form-check-input provider-filter" type="checkbox" value="Duplium"> <label class="form-check-label">Duplium</label></div>
+        </div>
+      </div>
+
+      <!-- Product Section -->
+      <div class="col-lg-10">
+        <div class="row g-4" id="productContainer"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <script>
+    const products = [
+      {
+        title: "Ceramic Mug 11oz",
+        brand: "Generic",
+        price: 4.40,
+        premiumPrice: 3.39,
+        tag: "Bestseller",
+        image: "./image.png",
+        market: "USA",
+        area: "Wraparound",
+        provider: "ArtsAdd",
+        quality: "Premium",
+        size: 1,
+        color: 5
+      },
+      {
+        title: "Black Mug 15oz",
+        brand: "Generic",
+        price: 5.84,
+        premiumPrice: 4.49,
+        image: "./image.png",
+        market: "Canada",
+        area: "Front Side",
+        provider: "Duplium",
+        quality: "Premium",
+        size: 1,
+        color: 1
+      },
+      {
+        title: "White Mug 12oz",
+        brand: "Generic",
+        price: 3.75,
+        premiumPrice: 2.89,
+        image: "./image.png",
+        market: "UK",
+        area: "Wraparound",
+        provider: "ArtsAdd",
+        quality: "Premium",
+        size: 1,
+        color: 2
+      }
+    ];
+
+    function renderProducts(data) {
+      const container = document.getElementById("productContainer");
+      container.innerHTML = "";
+
+      if (data.length === 0) {
+        container.innerHTML = `<p class="text-muted">No products match your filters.</p>`;
+        return;
+      }
+
+      data.forEach(product => {
+        const card = document.createElement("div");
+        card.className = "col-md-6 col-lg-4 col-xl-3";
+        card.innerHTML = `
+          <div class="card position-relative h-100">
+            ${product.tag ? `<span class="badge bg-warning position-absolute top-0 start-0 m-2">${product.tag}</span>` : ''}
+            <img src="${product.image}" class="card-img-top" alt="${product.title}">
+            <div class="card-body">
+              <h6 class="card-title fw-bold m-0">${product.title}</h6>
+              <p class="text-muted mb-1">By ${product.brand}</p>
+              <p class="fw-bold mb-0">From USD ${product.price.toFixed(2)}</p>
+              <p class="text-success small mb-0">From USD ${product.premiumPrice.toFixed(2)} with Printify</p>
+              <p class="text-success small mb-1">${product.quality}</p>
+              <p class="mb-0">${product.size} Size - ${product.color} color</p>
+            </div>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function getCheckedValues(className) {
+      return [...document.querySelectorAll(`.${className}:checked`)].map(cb => cb.value);
+    }
+
+    function toggleFilter(type) {
+      const group = document.getElementById(`group-${type}`);
+      const arrow = document.getElementById(`arrow-${type}`);
+      group.style.display = group.style.display === "none" ? "block" : "none";
+      arrow.classList.toggle("rotate-90");
+    }
+
+    function applyFilters() {
+      const marketFilters = getCheckedValues("market-filter");
+      const areaFilters = getCheckedValues("area-filter");
+      const providerFilters = getCheckedValues("provider-filter");
+      const sortValue = document.getElementById("sortSelect").value;
+
+      let filtered = products.filter(product =>
+        (!marketFilters.length || marketFilters.includes(product.market)) &&
+        (!areaFilters.length || areaFilters.includes(product.area)) &&
+        (!providerFilters.length || providerFilters.includes(product.provider))
+      );
+
+      if (sortValue === "low") {
+        filtered.sort((a, b) => a.price - b.price);
+      } else if (sortValue === "high") {
+        filtered.sort((a, b) => b.price - a.price);
+      }
+
+      renderProducts(filtered);
+    }
+
+    document.querySelectorAll(".form-check-input").forEach(input => {
+      input.addEventListener("change", applyFilters);
+    });
+
+    document.getElementById("sortSelect").addEventListener("change", applyFilters);
+
+    renderProducts(products);
+  </script>
+</body>
+</html>
