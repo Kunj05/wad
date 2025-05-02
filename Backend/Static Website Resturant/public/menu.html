@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Menu | Our Restaurant</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #fdf5f3;
+      color: #333;
+    }
+
+    nav a {
+    text-decoration: none; 
+    color: inherit; 
+    margin-right: 15px;
+    font-weight: bold; 
+  }
+
+    header {
+      background: #fff;
+      border-bottom: 1px solid #eee;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      margin-bottom: 100px;
+    }
+
+    .logo {
+      font-family: 'Pacifico', cursive;
+      font-size: 1.8rem;
+      color: #e63946;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 40px;
+    }
+
+    .menu-container {
+      display: flex;
+      flex-wrap: wrap; 
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .menu-card {
+      background-color: white;
+      border-radius: 8px;
+      padding: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 30%;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .menu-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .menu-card h3 {
+      color: #ff4d4d;
+      margin: 15px 0;
+    }
+
+    .menu-card p {
+      color: #555;
+    }
+
+    .menu-card .price {
+      color: #333;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .menu-card .order-btn {
+      background-color: #ff4d4d;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 15px;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Tasty Bites</div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/menu.html">Menu</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="menu-container">
+    <div class="menu-card">
+      <img src="https://via.placeholder.com/300x200?text=Pizza" alt="Pizza">
+      <h3>Delicious Pizza</h3>
+      <p>A classic pizza with fresh toppings and crispy crust.</p>
+      <p class="price">$12.99</p>
+      <button class="order-btn">Order Now</button>
+    </div>
+
+    <div class="menu-card">
+      <img src="https://via.placeholder.com/300x200?text=Burger" alt="Burger">
+      <h3>Juicy Burger</h3>
+      <p>Grilled to perfection with a tender beef patty, lettuce, and cheese.</p>
+      <p class="price">$8.99</p>
+      <button class="order-btn">Order Now</button>
+    </div>
+
+    <div class="menu-card">
+      <img src="https://via.placeholder.com/300x200?text=Salad" alt="Salad">
+      <h3>Fresh Salad</h3>
+      <p>Fresh greens with a tangy dressing, perfect for a light meal.</p>
+      <p class="price">$6.99</p>
+      <button class="order-btn">Order Now</button>
+    </div>
+
+    <div class="menu-card">
+      <img src="https://via.placeholder.com/300x200?text=Pasta" alt="Pasta">
+      <h3>Spaghetti Carbonara</h3>
+      <p>A creamy pasta with crispy bacon and parmesan cheese.</p>
+      <p class="price">$14.99</p>
+      <button class="order-btn">Order Now</button>
+    </div>
+
+    <div class="menu-card">
+      <img src="https://via.placeholder.com/300x200?text=Ice+Cream" alt="Ice Cream">
+      <h3>Chocolate Ice Cream</h3>
+      <p>A creamy chocolate treat for dessert lovers.</p>
+      <p class="price">$4.99</p>
+      <button class="order-btn">Order Now</button>
+    </div>
+
+    <div class="menu-card">
+      <img src="https://via.placeholder.com/300x200?text=Ice+Cream" alt="Ice Cream">
+      <h3>Chocolate Ice Cream</h3>
+      <p>A creamy chocolate treat for dessert lovers.</p>
+      <p class="price">$4.99</p>
+      <button class="order-btn">Order Now</button>
+    </div>
+  </div>
+
+</body>
+</html>

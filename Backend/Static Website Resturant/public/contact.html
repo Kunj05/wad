@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us | Tasty Bites</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #fdf5f3;
+      color: #333;
+    }
+
+    nav a {
+    text-decoration: none; 
+    color: inherit; 
+    margin-right: 15px;
+    font-weight: bold; 
+  }
+
+    header {
+      background: #fff;
+      border-bottom: 1px solid #eee;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-family: 'Pacifico', cursive;
+      font-size: 1.8rem;
+      color: #e63946;
+    }
+
+
+    .contact-wrapper {
+      max-width: 700px;
+      margin: 100px auto 50px;
+      padding: 2rem;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+    }
+
+    h1 {
+      font-size: 2rem;
+      text-align: center;
+      color: #e63946;
+      margin-bottom: 1rem;
+    }
+
+    p.subtitle {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #666;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .info-block {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      border-left: 4px solid #e63946;
+      padding-left: 1rem;
+    }
+
+    .info-block i {
+      font-size: 1.4rem;
+      color: #e63946;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav a {
+        margin: 0.5rem 0;
+      }
+
+      .contact-wrapper {
+        margin: 80px 1rem;
+        padding: 1.5rem;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">Tasty Bites</div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/menu.html">Menu</a>
+      <a href="/contact.html">Contact</a>    </nav>
+  </header>
+
+  <div class="contact-wrapper">
+    <h1>Let’s Chat!</h1>
+    <p class="subtitle">Whether you're craving something delicious or just want to say hi, we’d love to hear from you.</p>
+    
+    <div class="contact-info">
+      <div class="info-block">
+        <i class="fas fa-phone"></i>
+        <div>
+          <strong>Phone</strong><br>
+          (555) 123-4567
+        </div>
+      </div>
+      <div class="info-block">
+        <i class="fas fa-envelope"></i>
+        <div>
+          <strong>Email</strong><br>
+          hello@tastybites.com
+        </div>
+      </div>
+      <div class="info-block">
+        <i class="fas fa-map-marker-alt"></i>
+        <div>
+          <strong>Find Us</strong><br>
+          123 Foodie Lane, Flavor Town
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
