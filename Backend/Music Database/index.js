@@ -17,7 +17,7 @@ const songs = [
 ];
 
 // Uncomment once to insert
-Song.insertMany(songs);
+// Song.insertMany(songs);
 
 app.get('/all', async (req, res) => {
     const allSongs = await Song.find();
