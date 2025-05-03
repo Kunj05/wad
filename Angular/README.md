@@ -1,5 +1,5 @@
 npm install -g @angular/cli
-ng version
+ng --version
 ng new todo-app
 cd todo-app
 ng serve
