@@ -43,8 +43,6 @@ app.delete('/books/:id',async (req, res) =>{
       }
 })
 app.put('/books/:id',async(req,res)=>{
-    console.log('Hi')
-    console.log(req.body);
     try{
         const updatedBook =await Book.findByIdAndUpdate(
             req.params.id,
