@@ -5,43 +5,40 @@
   <title>Register</title>
   <style>
     body {
-      background: #ecf0f1;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f7f6;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
+      margin: 0;
     }
+
     form {
       background: #fff;
       padding: 30px;
       border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       width: 100%;
-      max-width: 450px;
+      max-width: 500px;
     }
+
     h2 {
       text-align: center;
       color: #333;
       margin-bottom: 20px;
     }
-    input, textarea, select {
+
+    input, select, textarea {
       width: 100%;
-      padding: 10px;
-      margin-bottom: 10px;
+      padding: 12px;
+      margin-bottom: 15px;
       border: 1px solid #ccc;
       border-radius: 5px;
       font-size: 14px;
+      box-sizing: border-box;
     }
-    .error {
-      color: red;
-      font-size: 13px;
-      margin: -8px 0 8px 0;
-    }
-    .success {
-      color: green;
-      text-align: center;
-      margin-top: 10px;
-    }
+
     button {
       width: 100%;
       padding: 12px;
@@ -52,8 +49,28 @@
       font-size: 16px;
       cursor: pointer;
     }
+
     button:hover {
       background-color: #2980b9;
+    }
+
+    .error {
+      color: red;
+      font-size: 12px;
+      margin-top: -10px;
+    }
+
+    .success {
+      color: green;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      form {
+        width: 90%;
+        padding: 20px;
+      }
     }
   </style>
 </head>
@@ -153,7 +170,7 @@
         !/[a-z]/.test(user.password) ||
         !/[0-9]/.test(user.password)
       ) {
-        showError("password", "Password must include uppercase, lowercase and number.");
+        showError("password", "Password must include uppercase, lowercase, and a number.");
         valid = false;
       }
 
@@ -161,21 +178,36 @@
     };
 
     form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        clearErrors();
+      e.preventDefault();
+      clearErrors();
 
-        const user = {};
-        fields.forEach(field => {
-            user[field] = document.getElementById(field).value.trim();
-        });
+      const user = {};
+      fields.forEach(field => {
+        user[field] = document.getElementById(field).value.trim();
+      });
 
-        if (!validate(user)) return;
+      if (!validate(user)) return;
 
-        const users = JSON.parse(localStorage.getItem("users") || "[]");
-        users.push(user);
-        localStorage.setItem("users", JSON.stringify(users));
-
-        window.location.href = "login.html";
+     fetch("http://localhost:3000/api/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(user),
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.success) {
+          document.getElementById("successMsg").textContent = "Registration successful!";
+          form.reset();
+          window.location.href = "login.html"; 
+        } else {
+          showError("username", data.message);
+        }
+      })
+      .catch(error => {
+        showError("username", "An error occurred. Please try again.");
+      });
     });
   </script>
 </body>
