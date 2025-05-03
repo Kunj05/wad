@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact Us | Tasty Bites</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Pacifico&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
@@ -12,13 +12,6 @@
       background-color: #fdf5f3;
       color: #333;
     }
-
-    nav a {
-    text-decoration: none; 
-    color: inherit; 
-    margin-right: 15px;
-    font-weight: bold; 
-  }
 
     header {
       background: #fff;
@@ -38,6 +31,12 @@
       color: #e63946;
     }
 
+    nav a {
+      text-decoration: none;
+      color: #333;
+      margin-right: 15px;
+      font-weight: bold;
+    }
 
     .contact-wrapper {
       max-width: 700px;
@@ -45,7 +44,7 @@
       padding: 2rem;
       background: #fff;
       border-radius: 8px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
     }
 
     h1 {
@@ -68,16 +67,14 @@
     }
 
     .info-block {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      border-left: 4px solid #e63946;
       padding-left: 1rem;
+      border-left: 4px solid #e63946;
     }
 
-    .info-block i {
-      font-size: 1.4rem;
-      color: #e63946;
+    .info-block strong {
+      display: block;
+      margin-bottom: 0.25rem;
+      font-weight: 600;
     }
 
     @media (max-width: 600px) {
@@ -96,7 +93,6 @@
       }
     }
   </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
@@ -105,7 +101,8 @@
     <nav>
       <a href="/">Home</a>
       <a href="/menu.html">Menu</a>
-      <a href="/contact.html">Contact</a>    </nav>
+      <a href="/contact.html">Contact</a>
+    </nav>
   </header>
 
   <div class="contact-wrapper">
@@ -114,25 +111,16 @@
     
     <div class="contact-info">
       <div class="info-block">
-        <i class="fas fa-phone"></i>
-        <div>
-          <strong>Phone</strong><br>
-          (555) 123-4567
-        </div>
+        <strong>Phone</strong>
+        (555) 123-4567
       </div>
       <div class="info-block">
-        <i class="fas fa-envelope"></i>
-        <div>
-          <strong>Email</strong><br>
-          hello@tastybites.com
-        </div>
+        <strong>Email</strong>
+        hello@tastybites.com
       </div>
       <div class="info-block">
-        <i class="fas fa-map-marker-alt"></i>
-        <div>
-          <strong>Find Us</strong><br>
-          123 Foodie Lane, Flavor Town
-        </div>
+        <strong>Find Us</strong>
+        123 Foodie Lane, Flavor Town
       </div>
     </div>
   </div>
