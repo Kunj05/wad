@@ -117,98 +117,101 @@
   <script>
     const form = document.getElementById("registerForm");
     const fields = ["name", "email", "mobile", "dob", "city", "address", "username", "password"];
-
+  
     const showError = (field, message) => {
       document.getElementById(`${field}Error`).textContent = message;
     };
-
+  
     const clearErrors = () => {
       fields.forEach(field => showError(field, ""));
       document.getElementById("successMsg").textContent = "";
     };
-
+  
     const validate = (user) => {
       let valid = true;
-
+  
       if (user.name.length < 3) {
         showError("name", "Name must be at least 3 characters.");
         valid = false;
       }
-
+  
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(user.email)) {
         showError("email", "Invalid email format.");
         valid = false;
       }
-
+  
       if (!/^\d{10}$/.test(user.mobile)) {
         showError("mobile", "Mobile number must be 10 digits.");
         valid = false;
       }
-
+  
       if (!user.dob) {
         showError("dob", "Date of birth is required.");
         valid = false;
       }
-
+  
       if (!user.city) {
         showError("city", "Please select a city.");
         valid = false;
       }
-
+  
       if (user.address.length < 10) {
         showError("address", "Address must be at least 10 characters.");
         valid = false;
       }
-
+  
       if (user.username.length < 4) {
         showError("username", "Username must be at least 4 characters.");
         valid = false;
       }
-
+  
       if (user.password.length < 6 ||
         !/[A-Z]/.test(user.password) ||
         !/[a-z]/.test(user.password) ||
-        !/[0-9]/.test(user.password)
-      ) {
+        !/[0-9]/.test(user.password)) {
         showError("password", "Password must include uppercase, lowercase, and a number.");
         valid = false;
       }
-
+  
       return valid;
     };
-
+  
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       clearErrors();
-
+  
       const user = {};
       fields.forEach(field => {
         user[field] = document.getElementById(field).value.trim();
       });
-
+  
       if (!validate(user)) return;
-
-     fetch("http://localhost:3000/api/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(user),
-      })
-      .then(res => res.json())
-      .then(data => {
-        if (data.success) {
-          document.getElementById("successMsg").textContent = "Registration successful!";
-          form.reset();
-          window.location.href = "login.html"; 
+  
+      const xhr = new XMLHttpRequest();
+      xhr.open("POST", "http://localhost:3000/api/register");
+      xhr.setRequestHeader("Content-Type", "application/json");
+  
+      xhr.onload = function () {
+        if (xhr.status === 200) {
+          const data = JSON.parse(xhr.responseText);
+          if (data.success) {
+            document.getElementById("successMsg").textContent = "Registration successful!";
+            form.reset();
+            window.location.href = "login.html";
+          } else {
+            showError("username", data.message);
+          }
         } else {
-          showError("username", data.message);
+          showError("username", "Server error. Please try again.");
         }
-      })
-      .catch(error => {
-        showError("username", "An error occurred. Please try again.");
-      });
+      };
+  
+      xhr.onerror = function () {
+        showError("username", "Network error. Please check your connection.");
+      };
+  
+      xhr.send(JSON.stringify(user));
     });
   </script>
-</body>
+  </body>
 </html>

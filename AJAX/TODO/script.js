@@ -3,10 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const addTaskBtn = document.getElementById('addTask');
     const todoList = document.getElementById('todoList');
 
-    // Load tasks when page loads
     loadTasks();
 
-    // Add new task
     addTaskBtn.addEventListener('click', addTask);
     taskInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
@@ -17,39 +15,42 @@ document.addEventListener('DOMContentLoaded', () => {
     function addTask() {
         const taskText = taskInput.value.trim();
         if (taskText) {
-            fetch('/api/tasks', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ text: taskText })
-            })
-            .then(response => response.json())
-            .then(task => {
-                createTaskElement(task);
-                taskInput.value = '';
-            })
-            .catch(error => console.error('Error:', error));
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', '/api/tasks');
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.onload = () => {
+                if (xhr.status === 200) {
+                    const task = JSON.parse(xhr.responseText);
+                    createTaskElement(task);
+                    taskInput.value = '';
+                } else {
+                    console.error('Error adding task');
+                }
+            };
+            xhr.send(JSON.stringify({ text: taskText }));
         }
     }
 
     function loadTasks() {
-        fetch('/api/tasks')
-            .then(response => response.json())
-            .then(tasks => {
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', '/api/tasks');
+        xhr.onload = () => {
+            if (xhr.status === 200) {
+                const tasks = JSON.parse(xhr.responseText);
                 todoList.innerHTML = '';
                 tasks.forEach(task => createTaskElement(task));
-            })
-            .catch(error => console.error('Error:', error));
+            } else {
+                console.error('Error loading tasks');
+            }
+        };
+        xhr.send();
     }
 
     function createTaskElement(task) {
         const li = document.createElement('li');
         li.className = 'todo-item';
         li.dataset.id = task.id;
-        if (task.completed) {
-            li.classList.add('completed');
-        }
+        if (task.completed) li.classList.add('completed');
 
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
@@ -83,31 +84,26 @@ document.addEventListener('DOMContentLoaded', () => {
         input.type = 'text';
         input.value = currentText;
         input.className = 'edit-input';
-        
-        // Replace span with input
         spanElement.replaceWith(input);
         input.focus();
 
-        // Handle save on Enter or blur
         const saveEdit = () => {
             const newText = input.value.trim();
             if (newText && newText !== currentText) {
-                fetch(`/api/tasks/${id}`, {
-                    method: 'PUT',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ text: newText })
-                })
-                .then(response => response.json())
-                .then(updatedTask => {
-                    spanElement.textContent = updatedTask.text;
-                    input.replaceWith(spanElement);
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    input.replaceWith(spanElement);
-                });
+                const xhr = new XMLHttpRequest();
+                xhr.open('PUT', `/api/tasks/${id}`);
+                xhr.setRequestHeader('Content-Type', 'application/json');
+                xhr.onload = () => {
+                    if (xhr.status === 200) {
+                        const updatedTask = JSON.parse(xhr.responseText);
+                        spanElement.textContent = updatedTask.text;
+                        input.replaceWith(spanElement);
+                    } else {
+                        console.error('Error updating task');
+                        input.replaceWith(spanElement);
+                    }
+                };
+                xhr.send(JSON.stringify({ text: newText }));
             } else {
                 input.replaceWith(spanElement);
             }
@@ -123,29 +119,31 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function toggleTask(id) {
-        fetch(`/api/tasks/${id}/toggle`, {
-            method: 'PUT'
-        })
-        .then(response => response.json())
-        .then(updatedTask => {
-            const taskElement = document.querySelector(`[data-id="${id}"]`);
-            if (updatedTask.completed) {
-                taskElement.classList.add('completed');
+        const xhr = new XMLHttpRequest();
+        xhr.open('PUT', `/api/tasks/${id}/toggle`);
+        xhr.onload = () => {
+            if (xhr.status === 200) {
+                const updatedTask = JSON.parse(xhr.responseText);
+                const taskElement = document.querySelector(`[data-id="${id}"]`);
+                taskElement.classList.toggle('completed', updatedTask.completed);
             } else {
-                taskElement.classList.remove('completed');
+                console.error('Error toggling task');
             }
-        })
-        .catch(error => console.error('Error:', error));
+        };
+        xhr.send();
     }
 
     function deleteTask(id) {
-        fetch(`/api/tasks/${id}`, {
-            method: 'DELETE'
-        })
-        .then(() => {
-            const taskElement = document.querySelector(`[data-id="${id}"]`);
-            taskElement.remove();
-        })
-        .catch(error => console.error('Error:', error));
+        const xhr = new XMLHttpRequest();
+        xhr.open('DELETE', `/api/tasks/${id}`);
+        xhr.onload = () => {
+            if (xhr.status === 200) {
+                const taskElement = document.querySelector(`[data-id="${id}"]`);
+                taskElement.remove();
+            } else {
+                console.error('Error deleting task');
+            }
+        };
+        xhr.send();
     }
-}); 
+});
