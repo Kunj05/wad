@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PICT Student Clubs</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f2f5;
+      color: #333;
+      padding: 1rem;
+    }
+
+    header {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      background: #004080;
+      color: white;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .club {
+      background: #fff;
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s ease;
+    }
+
+    .club:hover {
+      transform: translateY(-4px);
+    }
+
+    .club img {
+      width: 100%;
+      height: auto;
+      max-height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .club h2 {
+      font-size: 1.4rem;
+      color: #004080;
+      margin-bottom: 0.5rem;
+    }
+
+    .club p {
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+
+    .club ul {
+      padding-left: 1.2rem;
+      list-style-type: disc;
+      margin-top: 0.5rem;
+    }
+
+    .club ul li {
+      margin-bottom: 0.3rem;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>PICT Student Clubs</h1>
+  </header>
+
+  <div class="container">
+
+    <section class="club">
+      <img src="https://via.placeholder.com/800x220?text=Coding+Club" alt="Coding Club">
+      <h2>Coding Club</h2>
+      <p>The Coding Club enhances programming skills through coding competitions, workshops, and mentorship.</p>
+      <ul>
+        <li>Winners of Hacktoberfest 2024</li>
+        <li>Hosted PICT CodeJam 2023</li>
+      </ul>
+    </section>
+
+    <section class="club">
+      <img src="https://via.placeholder.com/800x220?text=Robotics+Club" alt="Robotics Club">
+      <h2>Robotics Club</h2>
+      <p>The Robotics Club builds autonomous bots, competes in national contests, and conducts hands-on robotics sessions.</p>
+      <ul>
+        <li>Finalists at Robocon 2024</li>
+        <li>Winner of National Robotics Challenge 2023</li>
+      </ul>
+    </section>
+
+    <section class="club">
+      <img src="https://via.placeholder.com/800x220?text=Dance+Club" alt="Dance Club">
+      <h2>Dance Club</h2>
+      <p>The Dance Club showcases talent through cultural events and inter-college competitions in various dance forms.</p>
+      <ul>
+        <li>Winners at Sympulse 2023</li>
+        <li>Performed at Mood Indigo 2024</li>
+      </ul>
+    </section>
+
+  </div>
+
+</body>
+</html>
