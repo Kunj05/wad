@@ -1,122 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
   <title>My Portfolio</title>
-
-  <!-- jQuery & jQuery Mobile CDN -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- jQuery Mobile CDN -->
   <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
   <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
   <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
   <style>
-    .content {
-      padding: 20px;
+    .center-img {
+      display: block;
+      margin: 1em auto;
+      max-width: 150px;
+      border-radius: 50%;
     }
     h2 {
-      text-align: center;
-      margin-top: 0;
+      margin-top: 0.5em;
     }
   </style>
 </head>
+
 <body>
 
-  <!-- About Me Page -->
-  <div data-role="page" id="about">
-    <div data-role="header">
-      <h1>About Me</h1>
-    </div>
-    <div class="content" data-role="content">
-      <h2>Hi, I'm John Doe</h2>
-      <p>I’m a passionate web developer specializing in front-end technologies. I enjoy building beautiful and responsive web apps for all platforms.</p>
-    </div>
-    <div data-role="footer" data-position="fixed">
-      <div data-role="navbar">
-        <ul>
-          <li><a href="#about" class="ui-btn-active">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
+<!-- Navbar Template -->
+<div data-role="panel" id="menu-panel" data-display="overlay">
+  <ul data-role="listview">
+    <li><a href="#about">About Me</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</div>
 
-  <!-- Projects Page -->
-  <div data-role="page" id="projects">
-    <div data-role="header">
-      <h1>Projects</h1>
-    </div>
-    <div class="content" data-role="content">
-      <h2>My Work</h2>
-      <ul data-role="listview">
-        <li><strong>Portfolio Website</strong> - A responsive site built using HTML, CSS, and JavaScript.</li>
-        <li><strong>Task Manager</strong> - A to-do app with Node.js and MongoDB backend.</li>
-        <li><strong>Weather App</strong> - Real-time weather updates using APIs.</li>
-      </ul>
-    </div>
-    <div data-role="footer" data-position="fixed">
-      <div data-role="navbar">
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects" class="ui-btn-active">Projects</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </div>
+<!-- About Me -->
+<div data-role="page" id="about">
+  <div data-role="header">
+    <h1>About Me</h1>
+    <a href="#menu-panel" data-icon="bars" class="ui-btn-left">Menu</a>
   </div>
+  <div data-role="main">
+    <img src="https://via.placeholder.com/150" alt="Profile Picture" class="center-img">
+    <p style="text-align:justify;">
+      Hello! I’m a passionate web developer with a love for building interactive, mobile-friendly websites. I enjoy working with HTML, CSS, JavaScript, and exploring new technologies.
+    </p>
+  </div>
+</div>
 
-  <!-- Skills Page -->
-  <div data-role="page" id="skills">
-    <div data-role="header">
-      <h1>Skills</h1>
-    </div>
-    <div class="content" data-role="content">
-      <h2>What I Know</h2>
-      <ul data-role="listview">
-        <li>HTML5, CSS3, JavaScript</li>
-        <li>React, jQuery, Bootstrap</li>
-        <li>Node.js, Express</li>
-        <li>MongoDB, MySQL</li>
-        <li>Git & GitHub</li>
-      </ul>
-    </div>
-    <div data-role="footer" data-position="fixed">
-      <div data-role="navbar">
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#skills" class="ui-btn-active">Skills</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+<!-- Projects -->
+<div data-role="page" id="projects">
+  <div data-role="header">
+    <h1>Projects</h1>
+    <a href="#menu-panel" data-icon="bars" class="ui-btn-left">Menu</a>
+  </div>
+  <div data-role="main">
+    <div data-role="collapsible-set">
+      <div data-role="collapsible">
+        <h4>Portfolio Website</h4>
+        <p>A mobile-first portfolio built with HTML, CSS, and jQuery Mobile.</p>
+      </div>
+      <div data-role="collapsible">
+        <h4>Task Manager App</h4>
+        <p>A simple to-do list web app with local storage and smooth UI.</p>
+      </div>
+      <div data-role="collapsible">
+        <h4>Blog Platform</h4>
+        <p>A lightweight blog with markdown support and custom themes.</p>
       </div>
     </div>
   </div>
+</div>
 
-  <!-- Contact Page -->
-  <div data-role="page" id="contact">
-    <div data-role="header">
-      <h1>Contact Info</h1>
-    </div>
-    <div class="content" data-role="content">
-      <h2>Get in Touch</h2>
-      <p>Email: johndoe@example.com</p>
-      <p>Phone: +91-9876543210</p>
-      <p>GitHub: <a href="https://github.com/johndoe" target="_blank">github.com/johndoe</a></p>
-    </div>
-    <div data-role="footer" data-position="fixed">
-      <div data-role="navbar">
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#contact" class="ui-btn-active">Contact</a></li>
-        </ul>
-      </div>
-    </div>
+<!-- Skills -->
+<div data-role="page" id="skills">
+  <div data-role="header">
+    <h1>Skills</h1>
+    <a href="#menu-panel" data-icon="bars" class="ui-btn-left">Menu</a>
   </div>
+  <div data-role="main">
+    <ul data-role="listview" data-inset="true">
+      <li>HTML5 & CSS3</li>
+      <li>JavaScript & jQuery</li>
+      <li>Responsive Design</li>
+      <li>Bootstrap</li>
+      <li>Git & GitHub</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Contact Info -->
+<div data-role="page" id="contact">
+  <div data-role="header">
+    <h1>Contact</h1>
+    <a href="#menu-panel" data-icon="bars" class="ui-btn-left">Menu</a>
+  </div>
+  <div data-role="main">
+    <p><strong>Email:</strong> yourname@example.com</p>
+    <p><strong>Phone:</strong> +91-9876543210</p>
+    <p><strong>LinkedIn:</strong> linkedin.com/in/yourprofile</p>
+    <p><strong>GitHub:</strong> github.com/yourusername</p>
+  </div>
+</div>
 
 </body>
 </html>

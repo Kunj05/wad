@@ -2,200 +2,180 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PICT B.E. Course Structure</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PICT Mobile Site</title>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <!-- <script src="./jquery-3.7.1.min.js"></script> -->
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 20px;
-            background-color: #f4f4f4;
-            margin: 0;
+        .custom-header {
+            background: #1a237e !important;
+            color: white !important;
         }
-        h1 {
-            text-align: center;
+        .logo-img {
+            max-width: 200px;
+            margin: 20px auto;
+            display: block;
         }
-        .year-section {
-            margin: 20px 0;
+        .custom-content {
+            padding: 15px;
         }
-        .collapsible {
-            background-color: #444;
-            color: white;
-            padding: 10px;
-            cursor: pointer;
-            border-radius: 5px;
-            text-align: left;
-            font-size: 1.2rem;
-            width: 100%;
-            border: none;
+        .custom-list {
+            margin-top: 20px;
         }
-        .collapsible.active, .collapsible:hover {
-            background-color: #555;
+        .custom-collapsible {
+            margin-top: 15px;
         }
-        .content {
-            display: none;
-            padding-left: 20px;
-            margin-top: 10px;
-        }
-        .content ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        .content li {
-            margin: 10px 0;
-        }
-        h3 {
-            margin: 5px 0;
-        }
-        p {
-            margin: 5px 0;
-            color: #555;
+        .contact-info {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
         }
     </style>
 </head>
+
 <body>
-
-    <h1>PICT B.E. Course Structure</h1>
-
-    <!-- First Year (FE) -->
-    <div class="year-section" id="FE">
-        <h2 class="collapsible">First Year (FE)</h2>
-        <div class="content">
+<!-- About Us Page -->
+<div data-role="page" id="about">
+    <div data-role="header" class="custom-header" data-position="fixed">
+        <h1>PICT</h1>
+        <div data-role="navbar">
             <ul>
-                <li>
-                    <h3>Subject 1: Mathematics</h3>
-                    <p>Brief description about Mathematics subject.</p>
-                </li>
-                <li>
-                    <h3>Subject 2: Physics</h3>
-                    <p>Brief description about Physics subject.</p>
-                </li>
-                <li>
-                    <h3>Subject 3: Chemistry</h3>
-                    <p>Brief description about Chemistry subject.</p>
-                </li>
-                <li>
-                    <h3>Subject 4: Engineering Mechanics</h3>
-                    <p>Brief description about Engineering Mechanics subject.</p>
-                </li>
-                <li>
-                    <h3>Subject 5: Computer Fundamentals</h3>
-                    <p>Brief description about Computer Fundamentals subject.</p>
-                </li>
+                <li><a href="#about" class="ui-btn-active ui-state-persist">About</a></li>
+                <li><a href="#courses" >Courses</a></li>
+                <li><a href="#departments" >Departments</a></li>
+                <li><a href="#contact" >Contact</a></li>
             </ul>
         </div>
     </div>
 
-    <!-- Second Year (SE) -->
-    <div class="year-section" id="SE">
-        <h2 class="collapsible">Second Year (SE)</h2>
-        <div class="content">
+    <div data-role="main" >
+        <img src="https://upload.wikimedia.org/wikipedia/en/5/5a/PICT_Pune_logo.png" alt="PICT Logo" class="logo-img">
+        <div data-role="collapsible">
+            <h3>About PICT</h3>
+            <p>Pune Institute of Computer Technology (PICT) is one of the leading engineering colleges in India, located in Pune, Maharashtra. Established in 1983, PICT has been at the forefront of technical education.</p>
+        </div>
+        <div data-role="collapsible">
+            <h3>Vision</h3>
+            <p>To be a premier institute delivering quality technical education and research.</p>
+        </div>
+        <div data-role="collapsible">
+            <h3>Mission</h3>
+            <p>To produce competent engineers with a passion for learning and innovation.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Courses Page -->
+<div data-role="page" id="courses">
+    <div data-role="header" class="custom-header" data-position="fixed">
+        <h1>Courses</h1>
+        <div data-role="navbar">
             <ul>
-                <li>
-                    <h3>Subject 1: Computer Programming</h3>
-                    <p>Brief description about Computer Programming subject.</p>
-                </li>
-                <li>
-                    <h3>Subject 2: Data Structures</h3>
-                    <p>Brief description about Data Structures subject.</p>
-                </li>
-                <li>
-                    <h3>Subject 3: Digital Electronics</h3>
-                    <p>Brief description about Digital Electronics subject.</p>
-                </li>
-                <li>
-                    <h3>Subject 4: Discrete Mathematics</h3>
-                    <p>Brief description about Discrete Mathematics subject.</p>
-                </li>
-                <li>
-                    <h3>Subject 5: Microprocessor</h3>
-                    <p>Brief description about Microprocessor subject.</p>
-                </li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#courses" class="ui-btn-active ui-state-persist">Courses</a></li>
+                <li><a href="#departments" >Departments</a></li>
+                <li><a href="#contact" >Contact</a></li>
             </ul>
         </div>
     </div>
 
-    <!-- Third Year (TE) -->
-    <div class="year-section" id="TE">
-        <h2 class="collapsible">Third Year (TE)</h2>
-        <div class="content">
+    <div data-role="main" >
+        <ul data-role="listview" data-inset="true">
+            <li data-role="list-divider">Undergraduate Programs</li>
+            <li><a href="#">
+                <h2>B.E. Computer Engineering</h2>
+                <p>4-year program with focus on software development</p>
+            </a></li>
+            <li><a href="#">
+                <h2>B.E. Information Technology</h2>
+                <p>4-year program specializing in IT infrastructure</p>
+            </a></li>
+            <li><a href="#">
+                <h2>B.E. Electronics & Telecommunication</h2>
+                <p>4-year program in electronics systems</p>
+            </a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- Departments Page -->
+<div data-role="page" id="departments" >
+    <div data-role="header" class="custom-header" data-position="fixed">
+        <h1>Departments</h1>
+        <div data-role="navbar">
             <ul>
-                <li>
-                    <h3>Subject 1: Algorithms</h3>
-                    <p>Brief description about Algorithms subject.</p>
-                </li>
-                <li>
-                    <h3>Subject 2: Operating Systems</h3>
-                    <p>Brief description about Operating Systems subject.</p>
-                </li>
-                <li>
-                    <h3>Subject 3: Computer Networks</h3>
-                    <p>Brief description about Computer Networks subject.</p>
-                </li>
-                <li>
-                    <h3>Subject 4: Software Engineering</h3>
-                    <p>Brief description about Software Engineering subject.</p>
-                </li>
-                <li>
-                    <h3>Subject 5: Database Management Systems</h3>
-                    <p>Brief description about Database Management Systems subject.</p>
-                </li>
+                <li><a href="#about" >About</a></li>
+                <li><a href="#courses" >Courses</a></li>
+                <li><a href="#departments" class="ui-btn-active ui-state-persist">Departments</a></li>
+                <li><a href="#contact" >Contact</a></li>
             </ul>
         </div>
     </div>
 
-    <!-- Final Year (BE) -->
-    <div class="year-section" id="BE">
-        <h2 class="collapsible">Final Year (BE)</h2>
-        <div class="content">
+    <div data-role="main" >
+        <div data-role="collapsibleset">
+            <div data-role="collapsible">
+                <h3>Computer Engineering</h3>
+                <ul data-role="listview">
+                    <li>Advanced Computing</li>
+                    <li>Artificial Intelligence</li>
+                    <li>Database Systems</li>
+                    <li>Software Engineering</li>
+                </ul>
+            </div>
+            <div data-role="collapsible">
+                <h3>Information Technology</h3>
+                <ul data-role="listview">
+                    <li>Web Technologies</li>
+                    <li>Network Security</li>
+                    <li>Cloud Computing</li>
+                    <li>Data Analytics</li>
+                </ul>
+            </div>
+            <div data-role="collapsible">
+                <h3>Electronics & Telecommunication</h3>
+                <ul data-role="listview">
+                    <li>Digital Communication</li>
+                    <li>VLSI Design</li>
+                    <li>Embedded Systems</li>
+                    <li>Signal Processing</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Contact Page -->
+<div data-role="page" id="contact">
+    <div data-role="header" class="custom-header" data-position="fixed">
+        <h1>Contact</h1>
+        <div data-role="navbar">
             <ul>
-                <li>
-                    <h3>Subject 1: Software Engineering</h3>
-                    <p>Brief description about Software Engineering subject.</p>
-                </li>
-                <li>
-                    <h3>Subject 2: Artificial Intelligence</h3>
-                    <p>Brief description about Artificial Intelligence subject.</p>
-                </li>
-                <li>
-                    <h3>Subject 3: Cloud Computing</h3>
-                    <p>Brief description about Cloud Computing subject.</p>
-                </li>
-                <li>
-                    <h3>Subject 4: Machine Learning</h3>
-                    <p>Brief description about Machine Learning subject.</p>
-                </li>
-                <li>
-                    <h3>Subject 5: Data Science</h3>
-                    <p>Brief description about Data Science subject.</p>
-                </li>
+                <li><a href="#about" >About</a></li>
+                <li><a href="#courses" >Courses</a></li>
+                <li><a href="#departments" >Departments</a></li>
+                <li><a href="#contact" class="ui-btn-active ui-state-persist">Contact</a></li>
             </ul>
         </div>
     </div>
 
-    <script src="./jquery-3.7.1.min.js"></script>
-
-    <!-- CDN for jQuery -->
-    <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> -->
-    
-    <script>
-        // jQuery to handle collapsible sections
-        $(document).ready(function() {
-            // Check if jQuery is loaded
-            console.log($);  // This should log the jQuery function
-
-            $(".collapsible").click(function() {
-                $(this).toggleClass("active");
-                var content = $(this).next();
-                if (content.css("display") === "none") {
-                    content.slideDown();
-                } else {
-                    content.slideUp();
-                }
-            });
-        });
-    </script>
+    <div data-role="main" >
+        <div class="contact-info">
+            <h3>Address</h3>
+            <p>Survey No. 27, Near Trimurti Chowk,<br>Dhankawadi, Pune,<br>Maharashtra 411043</p>
+            
+            <h3>Contact Details</h3>
+            <ul data-role="listview" data-inset="true">
+                <li><a href="tel:+912024371101"><i class="ui-icon-phone"></i>Phone: +91-20-2437 1101</a></li>
+                <li><a href="mailto:registrar@pict.edu"><i class="ui-icon-mail"></i>Email: registrar@pict.edu</a></li>
+                <li><a href="https://pict.edu" target="_blank"><i class="ui-icon-home"></i>Website: www.pict.edu</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
-
-<!-- console.log($) -->
