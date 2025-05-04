@@ -31,12 +31,12 @@ export class AppComponent {
     };
     this.taskList.push(newTask);
     this.task = '';
-    console.log('Task added:', this.taskList); // Debug log
+    console.log('Task added:', this.taskList); 
   }
 
   deleteTask(id: number) {
     this.taskList = this.taskList.filter(task => task.id !== id);
-    console.log('Task deleted, remaining:', this.taskList); // Debug log
+    console.log('Task deleted, remaining:', this.taskList); 
   }
 
   editTask(task: Task) {
