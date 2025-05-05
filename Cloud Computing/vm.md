@@ -10,7 +10,9 @@ echo "This is a test file." > file1.txt
 cat file1.txt                       # Display contents
 
 # Replace vm2_ip with the actual IP of vm2
-scp file1.txt ubuntu-2@<vm2_ip>:/home/ubuntu-2
+scp file1.txt vm-2@<vm2_ip>:/home/ 
+scp file1.txt vm-2@<vm2_ip>:/home/vm-2-username
+scp file1.txt vm-2@<vm2_ip>:~
 
 vm2
 sudo apt-get update
@@ -18,7 +20,7 @@ sudo apt install net-tools
 sudo apt install openssh-server     # Corrected typos
 
 ifconfig                            # To confirm IP address
-ssh ubuntu-2@<vm2_ip>               # Try SSH into this machine from another (optional test)
+ssh username_of_vm2@<vm2_ip>               # Try SSH into this machine from another (optional test)
 
 commands
 su - ubuntu                         # Switch to user 'ubuntu'
