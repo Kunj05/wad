@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <style>
+        .profile-pic {
+            border-radius: 50%;
+            max-width: 150px;
+            margin: 0 auto;
+            display: block;
+        }
+        .center-text {
+            text-align: center;
+        }
+        .skill-bar {
+            height: 20px;
+            background-color: #ddd;
+            margin-bottom: 10px;
+        }
+        .skill-level {
+            height: 100%;
+            background-color: #3388cc;
+        }
+    </style>
+</head>
+<body>
+    <!-- Home Page -->
+    <div data-role="page" id="home">
+        <div data-role="header" data-theme="b">
+            <h1>My Portfolio</h1>
+        </div>
+
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#home" class="ui-btn-active ui-state-persist" data-icon="home">Home</a></li>
+                <li><a href="#projects" data-icon="grid">Projects</a></li>
+                <li><a href="#skills" data-icon="star">Skills</a></li>
+                <li><a href="#contact" data-icon="mail">Contact</a></li>
+            </ul>
+        </div>
+
+        <div data-role="content">
+            <div class="center-text">
+                <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-pic">
+                <h2>John Doe</h2>
+                <p>Web Developer & Designer</p>
+            </div>
+            
+            <div class="ui-body ui-body-a ui-corner-all">
+                <h3>About Me</h3>
+                <p>Hello! I'm John, a passionate web developer with expertise in HTML, CSS, JavaScript, and jQuery Mobile. I create responsive websites and mobile applications with user-friendly interfaces.</p>
+                <p>I'm currently pursuing my B.Tech in Computer Science and looking for internship opportunities.</p>
+            </div>
+            
+            <a href="#projects" data-role="button" data-theme="b">View My Projects</a>
+            <a href="#contact" data-role="button">Contact Me</a>
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <h4>&copy; 2023 John Doe</h4>
+        </div>
+    </div>
+
+    <!-- Projects Page -->
+    <div data-role="page" id="projects">
+        <div data-role="header" data-theme="b">
+            <h1>My Projects</h1>
+        </div>
+
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#home" data-icon="home">Home</a></li>
+                <li><a href="#projects" class="ui-btn-active ui-state-persist" data-icon="grid">Projects</a></li>
+                <li><a href="#skills" data-icon="star">Skills</a></li>
+                <li><a href="#contact" data-icon="mail">Contact</a></li>
+            </ul>
+        </div>
+
+        <div data-role="content">
+            <ul data-role="listview" data-inset="true">
+                <li>
+                    <a href="#project1">
+                        <img src="https://via.placeholder.com/100" alt="Project 1">
+                        <h2>E-Commerce Website</h2>
+                        <p>Online shopping platform with product listings and cart functionality</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#project2">
+                        <img src="https://via.placeholder.com/100" alt="Project 2">
+                        <h2>Weather App</h2>
+                        <p>Mobile app that displays weather forecasts using API data</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#project3">
+                        <img src="https://via.placeholder.com/100" alt="Project 3">
+                        <h2>Task Manager</h2>
+                        <p>Web application for managing daily tasks and priorities</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <h4>&copy; 2023 John Doe</h4>
+        </div>
+    </div>
+
+    <!-- Skills Page -->
+    <div data-role="page" id="skills">
+        <div data-role="header" data-theme="b">
+            <h1>My Skills</h1>
+        </div>
+
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#home" data-icon="home">Home</a></li>
+                <li><a href="#projects" data-icon="grid">Projects</a></li>
+                <li><a href="#skills" class="ui-btn-active ui-state-persist" data-icon="star">Skills</a></li>
+                <li><a href="#contact" data-icon="mail">Contact</a></li>
+            </ul>
+        </div>
+
+        <div data-role="content">
+            <h3>Technical Skills</h3>
+            
+            <div>
+                <p>HTML/CSS (90%)</p>
+                <div class="skill-bar"><div class="skill-level" style="width: 90%"></div></div>
+            </div>
+            
+            <div>
+                <p>JavaScript (80%)</p>
+                <div class="skill-bar"><div class="skill-level" style="width: 80%"></div></div>
+            </div>
+            
+            <div>
+                <p>jQuery Mobile (75%)</p>
+                <div class="skill-bar"><div class="skill-level" style="width: 75%"></div></div>
+            </div>
+            
+            <div>
+                <p>Responsive Design (85%)</p>
+                <div class="skill-bar"><div class="skill-level" style="width: 85%"></div></div>
+            </div>
+            
+            <h3>Education</h3>
+            <ul data-role="listview" data-inset="true">
+                <li>
+                    <h3>B.Tech in Computer Science</h3>
+                    <p>ABC University (2020-2024)</p>
+                </li>
+                <li>
+                    <h3>Web Development Certification</h3>
+                    <p>Online Course (2022)</p>
+                </li>
+            </ul>
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <h4>&copy; 2023 John Doe</h4>
+        </div>
+    </div>
+
+    <!-- Contact Page -->
+    <div data-role="page" id="contact">
+        <div data-role="header" data-theme="b">
+            <h1>Contact Me</h1>
+        </div>
+
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#home" data-icon="home">Home</a></li>
+                <li><a href="#projects" data-icon="grid">Projects</a></li>
+                <li><a href="#skills" data-icon="star">Skills</a></li>
+                <li><a href="#contact" class="ui-btn-active ui-state-persist" data-icon="mail">Contact</a></li>
+            </ul>
+        </div>
+
+        <div data-role="content">
+            <div class="ui-body ui-body-a ui-corner-all">
+                <h3>Contact Information</h3>
+                <p><strong>Email:</strong> john.doe@example.com</p>
+                <p><strong>Phone:</strong> (123) 456-7890</p>
+                <p><strong>Location:</strong> New York, USA</p>
+            </div>
+            
+            <div data-role="collapsible" data-collapsed="false">
+                <h3>Send Me a Message</h3>
+                <form>
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" id="name" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" required>
+                    
+                    <label for="message">Message:</label>
+                    <textarea name="message" id="message" required></textarea>
+                    
+                    <button type="submit" data-theme="b">Send Message</button>
+                </form>
+            </div>
+            
+            <div data-role="collapsible">
+                <h3>Social Media</h3>
+                <div data-role="controlgroup">
+                    <a href="#" data-role="button">LinkedIn</a>
+                    <a href="#" data-role="button">GitHub</a>
+                    <a href="#" data-role="button">Twitter</a>
+                </div>
+            </div>
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <h4>&copy; 2023 John Doe</h4>
+        </div>
+    </div>
+
+    <!-- Project details pages would follow similar structure -->
+</body>
+</html>

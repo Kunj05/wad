@@ -1,0 +1,22 @@
+.banner {
+    background-color: #0d6efd;
+    padding: 60px 0;
+    margin-bottom: 30px;
+}
+
+.card {
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,33 @@
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Dependency directories
+node_modules/
+bower_components/
+
+# Build artifacts
+dist/
+build/
+out/
+
+# Logs
+logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Local environment variables
+.env
+.env.local
+
+# Cache files
+.cache/
+.sass-cache/
+.eslintcache

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Mobile Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+    <!-- Home Page -->
+    <div data-role="page" id="home">
+        <div data-role="header" data-theme="b">
+            <h1>ABC College</h1>
+        </div>
+
+        <div data-role="content">
+            <img src="https://via.placeholder.com/300x150" alt="College Logo" style="width: 100%">
+            
+            <ul data-role="listview" data-inset="true">
+                <li><a href="#about">About College</a></li>
+                <li><a href="#courses">Courses Offered</a></li>
+                <li><a href="#faculty">Faculty</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+            
+            <div class="ui-body ui-body-a ui-corner-all">
+                <h3>Welcome to ABC College</h3>
+                <p>Excellence in education since 1990. Join us for quality education and bright career prospects.</p>
+            </div>
+        </div>
+
+        <div data-role="footer" data-position="fixed" data-theme="b">
+            <h4>&copy; 2023 ABC College</h4>
+        </div>
+    </div>
+
+    <!-- About Page -->
+    <div data-role="page" id="about">
+        <div data-role="header" data-theme="b">
+            <a href="#home" data-icon="home">Home</a>
+            <h1>About College</h1>
+        </div>
+
+        <div data-role="content">
+            <h2>Our Mission</h2>
+            <p>To provide quality education that transforms students into responsible professionals.</p>
+            
+            <h2>Our Vision</h2>
+            <p>To be recognized as a leading institution in academic excellence.</p>
+            
+            <h2>Infrastructure</h2>
+            <ul data-role="listview" data-inset="true">
+                <li>Modern Classrooms</li>
+                <li>Computer Labs</li>
+                <li>Library</li>
+                <li>Sports Facilities</li>
+            </ul>
+        </div>
+
+        <div data-role="footer" data-position="fixed" data-theme="b">
+            <h4>&copy; 2023 ABC College</h4>
+        </div>
+    </div>
+
+    <!-- Courses Page -->
+    <div data-role="page" id="courses">
+        <div data-role="header" data-theme="b">
+            <a href="#home" data-icon="home">Home</a>
+            <h1>Courses Offered</h1>
+        </div>
+
+        <div data-role="content">
+            <ul data-role="listview" data-inset="true">
+                <li>
+                    <h3>Computer Science</h3>
+                    <p>4-year degree program covering software development and computer fundamentals.</p>
+                </li>
+                <li>
+                    <h3>Civil Engineering</h3>
+                    <p>4-year degree program focused on structural design and construction.</p>
+                </li>
+                <li>
+                    <h3>Business Administration</h3>
+                    <p>3-year program covering business management and entrepreneurship.</p>
+                </li>
+            </ul>
+        </div>
+
+        <div data-role="footer" data-position="fixed" data-theme="b">
+            <h4>&copy; 2023 ABC College</h4>
+        </div>
+    </div>
+
+    <!-- Faculty Page -->
+    <div data-role="page" id="faculty">
+        <div data-role="header" data-theme="b">
+            <a href="#home" data-icon="home">Home</a>
+            <h1>Faculty</h1>
+        </div>
+
+        <div data-role="content">
+            <ul data-role="listview" data-inset="true">
+                <li>
+                    <img src="https://via.placeholder.com/80" alt="Prof. Smith">
+                    <h3>Prof. John Smith</h3>
+                    <p>Computer Science Department</p>
+                </li>
+                <li>
+                    <img src="https://via.placeholder.com/80" alt="Dr. Williams">
+                    <h3>Dr. Mary Williams</h3>
+                    <p>Civil Engineering Department</p>
+                </li>
+                <li>
+                    <img src="https://via.placeholder.com/80" alt="Prof. Johnson">
+                    <h3>Prof. Robert Johnson</h3>
+                    <p>Business Department</p>
+                </li>
+            </ul>
+        </div>
+
+        <div data-role="footer" data-position="fixed" data-theme="b">
+            <h4>&copy; 2023 ABC College</h4>
+        </div>
+    </div>
+
+    <!-- Contact Page -->
+    <div data-role="page" id="contact">
+        <div data-role="header" data-theme="b">
+            <a href="#home" data-icon="home">Home</a>
+            <h1>Contact Us</h1>
+        </div>
+
+        <div data-role="content">
+            <div class="ui-body ui-body-a ui-corner-all">
+                <h3>Address</h3>
+                <p>123 Education Lane<br>Knowledge City, KN 12345</p>
+                
+                <h3>Phone</h3>
+                <p>123-456-7890</p>
+                
+                <h3>Email</h3>
+                <p>info@abccollege.edu</p>
+            </div>
+            
+            <div data-role="collapsible" data-collapsed="false">
+                <h3>Send us a message</h3>
+                <form>
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" id="name">
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email">
+                    
+                    <label for="message">Message:</label>
+                    <textarea name="message" id="message"></textarea>
+                    
+                    <button type="submit" data-theme="b">Send</button>
+                </form>
+            </div>
+        </div>
+
+        <div data-role="footer" data-position="fixed" data-theme="b">
+            <h4>&copy; 2023 ABC College</h4>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Movie Reviews</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- jQuery Mobile CDN -->
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+  <style>
+    .movie-poster {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .section {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Home Page -->
+<div data-role="page" id="home">
+  <div data-role="header" data-theme="b">
+    <h1>Movie Reviews</h1>
+  </div>
+
+  <div data-role="content">
+    <h2>Top Movie Picks</h2>
+    <ul data-role="listview">
+      <li><a href="#movie1">Inception</a></li>
+      <li><a href="#movie2">The Dark Knight</a></li>
+      <li><a href="#movie3">Interstellar</a></li>
+      <li><a href="#movie4">Parasite</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Movie 1 -->
+<div data-role="page" id="movie1">
+  <div data-role="header" data-theme="b">
+    <a href="#home" data-icon="back">Back</a>
+    <h1>Inception</h1>
+  </div>
+  <div data-role="content">
+    <img src="https://via.placeholder.com/350x200?text=Inception" alt="Inception Poster" class="movie-poster">
+    <div class="section"><strong>Genre:</strong> Sci-Fi, Thriller</div>
+    <div class="section"><strong>Summary:</strong> A skilled thief enters people’s dreams to steal ideas, but now he must plant one instead.</div>
+    <div class="section"><strong>Review:</strong> A brilliant, layered story with stunning visuals and a mind-bending concept. Nolan at his best.</div>
+  </div>
+</div>
+
+<!-- Movie 2 -->
+<div data-role="page" id="movie2">
+  <div data-role="header" data-theme="b">
+    <a href="#home" data-icon="back">Back</a>
+    <h1>The Dark Knight</h1>
+  </div>
+  <div data-role="content">
+    <img src="https://via.placeholder.com/350x200?text=Dark+Knight" alt="Dark Knight Poster" class="movie-poster">
+    <div class="section"><strong>Genre:</strong> Action, Crime, Drama</div>
+    <div class="section"><strong>Summary:</strong> Batman faces the Joker, a criminal mastermind bringing chaos to Gotham.</div>
+    <div class="section"><strong>Review:</strong> A masterpiece in superhero cinema with powerful performances, especially by Heath Ledger.</div>
+  </div>
+</div>
+
+<!-- Movie 3 -->
+<div data-role="page" id="movie3">
+  <div data-role="header" data-theme="b">
+    <a href="#home" data-icon="back">Back</a>
+    <h1>Interstellar</h1>
+  </div>
+  <div data-role="content">
+    <img src="https://via.placeholder.com/350x200?text=Interstellar" alt="Interstellar Poster" class="movie-poster">
+    <div class="section"><strong>Genre:</strong> Sci-Fi, Adventure, Drama</div>
+    <div class="section"><strong>Summary:</strong> A team travels through a wormhole to find a new home for humanity.</div>
+    <div class="section"><strong>Review:</strong> A visually spectacular and emotionally gripping journey through space and time.</div>
+  </div>
+</div>
+
+<!-- Movie 4 -->
+<div data-role="page" id="movie4">
+  <div data-role="header" data-theme="b">
+    <a href="#home" data-icon="back">Back</a>
+    <h1>Parasite</h1>
+  </div>
+  <div data-role="content">
+    <img src="https://via.placeholder.com/350x200?text=Parasite" alt="Parasite Poster" class="movie-poster">
+    <div class="section"><strong>Genre:</strong> Thriller, Drama</div>
+    <div class="section"><strong>Summary:</strong> A poor family schemes to work for a wealthy one, but things spiral out of control.</div>
+    <div class="section"><strong>Review:</strong> A smart, gripping critique of class divide with a shocking and original plot.</div>
+  </div>
+</div>
+
+</body>
+</html>

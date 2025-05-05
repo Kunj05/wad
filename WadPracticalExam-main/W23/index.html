@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Student Clubs & Activities</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  </head>
+  <body>
+    <!-- Home Page -->
+    <div data-role="page" id="home">
+      <div data-role="header" data-theme="a">
+        <h1>Student Clubs</h1>
+      </div>
+
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#home" class="ui-btn-active">Clubs</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#join">Join</a></li>
+        </ul>
+      </div>
+
+      <div data-role="content">
+        <h2>College Clubs</h2>
+        <p>Explore and join our diverse student clubs!</p>
+
+        <ul
+          data-role="listview"
+          data-inset="true"
+          data-filter="true"
+          data-filter-placeholder="Search clubs..."
+        >
+          <li>
+            <a href="#tech">
+              <img src="https://via.placeholder.com/80" alt="Tech Club" />
+              <h2>Tech Club</h2>
+              <p>Coding, robotics, and technology workshops</p>
+            </a>
+          </li>
+          <li>
+            <a href="#sports">
+              <img src="https://via.placeholder.com/80" alt="Sports Club" />
+              <h2>Sports Club</h2>
+              <p>Basketball, football, and cricket teams</p>
+            </a>
+          </li>
+          <li>
+            <a href="#art">
+              <img src="https://via.placeholder.com/80" alt="Art Club" />
+              <h2>Art Club</h2>
+              <p>Painting, sketching, and crafts</p>
+            </a>
+          </li>
+          <li>
+            <a href="#music">
+              <img src="https://via.placeholder.com/80" alt="Music Club" />
+              <h2>Music Club</h2>
+              <p>Band practice, concerts, and vocal training</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div data-role="footer" data-position="fixed">
+        <h4>&copy; 2023 Student Activities</h4>
+      </div>
+    </div>
+
+    <!-- Club Details Pages -->
+    <div data-role="page" id="tech">
+      <div data-role="header" data-theme="a">
+        <a href="#home" data-icon="back">Back</a>
+        <h1>Tech Club</h1>
+      </div>
+
+      <div data-role="content">
+        <img
+          src="https://via.placeholder.com/300x150"
+          alt="Tech Club"
+          style="width: 100%"
+        />
+        <h2>Tech Club</h2>
+        <p>
+          Our tech club focuses on coding, robotics, and the latest
+          technologies.
+        </p>
+
+        <h3>Activities:</h3>
+        <ul>
+          <li>Weekly coding sessions</li>
+          <li>Robotics competitions</li>
+          <li>Tech workshops</li>
+          <li>Hackathons</li>
+        </ul>
+
+        <h3>Meeting Times:</h3>
+        <p>Every Tuesday at 4:00 PM in Lab 102</p>
+
+        <a href="#join" data-role="button" data-theme="b">Join This Club</a>
+      </div>
+
+      <div data-role="footer" data-position="fixed">
+        <h4>&copy; 2023 Student Activities</h4>
+      </div>
+    </div>
+
+    <!-- Events Page -->
+    <div data-role="page" id="events">
+      <div data-role="header" data-theme="a">
+        <h1>Upcoming Events</h1>
+      </div>
+
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#home">Clubs</a></li>
+          <li><a href="#events" class="ui-btn-active">Events</a></li>
+          <li><a href="#join">Join</a></li>
+        </ul>
+      </div>
+
+      <div data-role="content">
+        <ul data-role="listview" data-inset="true">
+          <li>
+            <h2>Annual Tech Fair</h2>
+            <p><strong>Date:</strong> Nov 15, 2023</p>
+            <p><strong>Location:</strong> Main Auditorium</p>
+          </li>
+          <li>
+            <h2>Sports Tournament</h2>
+            <p><strong>Date:</strong> Dec 5-10, 2023</p>
+            <p><strong>Location:</strong> College Grounds</p>
+          </li>
+          <li>
+            <h2>Art Exhibition</h2>
+            <p><strong>Date:</strong> Dec 20, 2023</p>
+            <p><strong>Location:</strong> Art Gallery</p>
+          </li>
+        </ul>
+      </div>
+
+      <div data-role="footer" data-position="fixed">
+        <h4>&copy; 2023 Student Activities</h4>
+      </div>
+    </div>
+
+    <!-- Join Page -->
+    <div data-role="page" id="join">
+      <div data-role="header" data-theme="a">
+        <h1>Join a Club</h1>
+      </div>
+
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#home">Clubs</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#join" class="ui-btn-active">Join</a></li>
+        </ul>
+      </div>
+
+      <div data-role="content">
+        <h2>Registration Form</h2>
+        <form>
+          <label for="student-name">Name:</label>
+          <input type="text" name="student-name" id="student-name" required />
+
+          <label for="student-id">Student ID:</label>
+          <input type="text" name="student-id" id="student-id" required />
+
+          <label for="student-email">Email:</label>
+          <input
+            type="email"
+            name="student-email"
+            id="student-email"
+            required
+          />
+
+          <label for="club-select">Select Club:</label>
+          <select name="club-select" id="club-select">
+            <option value="">--Choose a Club--</option>
+            <option value="tech">Tech Club</option>
+            <option value="sports">Sports Club</option>
+            <option value="art">Art Club</option>
+            <option value="music">Music Club</option>
+          </select>
+
+          <label for="reason">Why do you want to join?</label>
+          <textarea name="reason" id="reason"></textarea>
+
+          <button type="submit" data-theme="b">Submit Application</button>
+        </form>
+      </div>
+
+      <div data-role="footer" data-position="fixed">
+        <h4>&copy; 2023 Student Activities</h4>
+      </div>
+    </div>
+
+    <!-- Add remaining simple club details pages (sports, art, music) with similar structure to tech club -->
+  </body>
+</html>

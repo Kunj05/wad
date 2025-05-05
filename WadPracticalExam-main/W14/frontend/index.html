@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User List</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the external CSS file -->
+</head>
+<body>
+    <h1>User List</h1>
+    <ul id="user-list"></ul>
+
+    <script>
+        // Fetch users from the API
+        fetch('http://localhost:3000/api/users')
+            .then(response => response.json()) // Parse the JSON response
+            .then(users => {
+                // Get the <ul> element to append the list items
+                const userList = document.getElementById('user-list');
+                
+                // Loop through the users and create a list item for each user
+                users.forEach(user => {
+                    const listItem = document.createElement('li');
+                    listItem.innerHTML = `
+                        <span class="name">${user.name}</span>
+                        <p><span class="email">${user.email}</span></p>
+                    `;
+                    userList.appendChild(listItem);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching users:', error);
+            });
+    </script>
+</body>
+</html>

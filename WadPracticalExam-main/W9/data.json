@@ -1,0 +1,7 @@
+{
+  "Mumbai": { "temp": "32°C", "humidity": "75%", "condition": "Sunny" },
+  "Delhi": { "temp": "36°C", "humidity": "60%", "condition": "Hot" },
+  "Pune": { "temp": "28°C", "humidity": "80%", "condition": "Rainy" },
+  "Chennai": { "temp": "34°C", "humidity": "70%", "condition": "Humid" },
+  "Kolhapur": { "temp": "34°C", "humidity": "70%", "condition": "Cool" }
+}

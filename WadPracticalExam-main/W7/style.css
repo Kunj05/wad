@@ -1,0 +1,26 @@
+body {
+    background-color: #f0f2f5;
+}
+
+.navbar {
+    padding: 0.5rem 1rem;
+}
+
+.main-content {
+    margin-top: 70px;
+    padding-top: 20px;
+}
+
+.sidebar {
+    position: sticky;
+    top: 70px;
+}
+
+.card {
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.btn-light:hover {
+    background-color: #e4e6eb;
+}

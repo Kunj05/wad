@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>B.E. Course Structure</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+    <!-- Home Page -->
+    <div data-role="page" id="home">
+        <div data-role="header" data-theme="b">
+            <h1>B.E. Course Structure</h1>
+        </div>
+
+        <div data-role="content">
+            <div class="ui-body ui-body-a ui-corner-all">
+                <h3>Bachelor of Engineering</h3>
+                <p>Four-year undergraduate program in engineering designed to prepare students for professional practice.</p>
+            </div>
+            
+            <h3>Select Year:</h3>
+            <div data-role="collapsibleset" data-theme="a" data-content-theme="a">
+                <!-- First Year -->
+                <div data-role="collapsible">
+                    <h3>First Year (FE)</h3>
+                    <ul data-role="listview">
+                        <li data-role="list-divider">Semester 1</li>
+                        <li><a href="#fe-mathematics1">Engineering Mathematics I</a></li>
+                        <li><a href="#fe-physics">Engineering Physics</a></li>
+                        <li><a href="#fe-chemistry">Engineering Chemistry</a></li>
+                        <li><a href="#fe-mechanics">Engineering Mechanics</a></li>
+                        <li><a href="#fe-drawing">Engineering Drawing</a></li>
+                        
+                        <li data-role="list-divider">Semester 2</li>
+                        <li><a href="#fe-mathematics2">Engineering Mathematics II</a></li>
+                        <li><a href="#fe-programming">Programming Fundamentals</a></li>
+                        <li><a href="#fe-electrical">Basic Electrical Engineering</a></li>
+                        <li><a href="#fe-workshop">Workshop Practice</a></li>
+                        <li><a href="#fe-communication">Communication Skills</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Second Year -->
+                <div data-role="collapsible">
+                    <h3>Second Year (SE)</h3>
+                    <ul data-role="listview">
+                        <li data-role="list-divider">Semester 3</li>
+                        <li><a href="#se-mathematics3">Engineering Mathematics III</a></li>
+                        <li><a href="#se-datastructures">Data Structures</a></li>
+                        <li><a href="#se-digital">Digital Systems</a></li>
+                        <li><a href="#se-discrete">Discrete Mathematics</a></li>
+                        
+                        <li data-role="list-divider">Semester 4</li>
+                        <li><a href="#se-mathematics4">Engineering Mathematics IV</a></li>
+                        <li><a href="#se-algorithms">Algorithms</a></li>
+                        <li><a href="#se-computer-org">Computer Organization</a></li>
+                        <li><a href="#se-database">Database Systems</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Third Year -->
+                <div data-role="collapsible">
+                    <h3>Third Year (TE)</h3>
+                    <ul data-role="listview">
+                        <li data-role="list-divider">Semester 5</li>
+                        <li><a href="#te-theory">Theory of Computation</a></li>
+                        <li><a href="#te-software-eng">Software Engineering</a></li>
+                        <li><a href="#te-computer-networks">Computer Networks</a></li>
+                        <li><a href="#te-operating-systems">Operating Systems</a></li>
+                        
+                        <li data-role="list-divider">Semester 6</li>
+                        <li><a href="#te-compiler">Compiler Design</a></li>
+                        <li><a href="#te-web-tech">Web Technologies</a></li>
+                        <li><a href="#te-mobile">Mobile Application Development</a></li>
+                        <li><a href="#te-ai">Artificial Intelligence</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Fourth Year -->
+                <div data-role="collapsible">
+                    <h3>Final Year (BE)</h3>
+                    <ul data-role="listview">
+                        <li data-role="list-divider">Semester 7</li>
+                        <li><a href="#be-security">Information Security</a></li>
+                        <li><a href="#be-ml">Machine Learning</a></li>
+                        <li><a href="#be-project1">Project Phase I</a></li>
+                        <li><a href="#be-elective1">Elective I</a></li>
+                        
+                        <li data-role="list-divider">Semester 8</li>
+                        <li><a href="#be-cloud">Cloud Computing</a></li>
+                        <li><a href="#be-project2">Project Phase II</a></li>
+                        <li><a href="#be-elective2">Elective II</a></li>
+                        <li><a href="#be-internship">Industrial Training</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#home" class="ui-btn-active" data-icon="home">Home</a></li>
+                    <li><a href="#syllabus" data-icon="grid">Syllabus</a></li>
+                    <li><a href="#faculty" data-icon="user">Faculty</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Subject Detail Page Example -->
+    <div data-role="page" id="fe-mathematics1">
+        <div data-role="header" data-theme="b">
+            <a href="#home" data-icon="back">Back</a>
+            <h1>Engineering Mathematics I</h1>
+        </div>
+
+        <div data-role="content">
+            <h3>Course Overview</h3>
+            <p>This course introduces fundamental mathematical concepts necessary for engineering disciplines.</p>
+            
+            <div data-role="collapsible-set">
+                <div data-role="collapsible" data-collapsed="false">
+                    <h3>Course Objectives</h3>
+                    <ul>
+                        <li>Understand differential and integral calculus</li>
+                        <li>Apply mathematical methods to solve engineering problems</li>
+                        <li>Develop analytical thinking skills</li>
+                    </ul>
+                </div>
+                
+                <div data-role="collapsible">
+                    <h3>Syllabus</h3>
+                    <ol>
+                        <li>Matrices and Determinants</li>
+                        <li>Differential Calculus</li>
+                        <li>Integral Calculus</li>
+                        <li>Differential Equations</li>
+                        <li>Vector Calculus</li>
+                    </ol>
+                </div>
+                
+                <div data-role="collapsible">
+                    <h3>Credits</h3>
+                    <p>4 Credits (3 Theory + 1 Tutorial)</p>
+                    <p><strong>Contact Hours:</strong> 4 hours per week</p>
+                </div>
+                
+                <div data-role="collapsible">
+                    <h3>References</h3>
+                    <ul>
+                        <li>Higher Engineering Mathematics by B.S. Grewal</li>
+                        <li>Advanced Engineering Mathematics by Erwin Kreyszig</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#home" data-icon="home">Home</a></li>
+                    <li><a href="#syllabus" data-icon="grid">Syllabus</a></li>
+                    <li><a href="#faculty" data-icon="user">Faculty</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Syllabus Page -->
+    <div data-role="page" id="syllabus">
+        <div data-role="header" data-theme="b">
+            <h1>Complete Syllabus</h1>
+        </div>
+
+        <div data-role="content">
+            <div data-role="collapsible">
+                <h3>Download Syllabus</h3>
+                <ul data-role="listview">
+                    <li><a href="#">FE Syllabus (PDF)</a></li>
+                    <li><a href="#">SE Syllabus (PDF)</a></li>
+                    <li><a href="#">TE Syllabus (PDF)</a></li>
+                    <li><a href="#">BE Syllabus (PDF)</a></li>
+                </ul>
+            </div>
+            
+            <div data-role="collapsible">
+                <h3>Academic Calendar</h3>
+                <ul>
+                    <li>Semester Start: August 1, 2023</li>
+                    <li>Mid-term Exam: October 10-15, 2023</li>
+                    <li>Final Exam: December 5-15, 2023</li>
+                    <li>Results: January 5, 2024</li>
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#home" data-icon="home">Home</a></li>
+                    <li><a href="#syllabus" class="ui-btn-active" data-icon="grid">Syllabus</a></li>
+                    <li><a href="#faculty" data-icon="user">Faculty</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Faculty Page -->
+    <div data-role="page" id="faculty">
+        <div data-role="header" data-theme="b">
+            <h1>Faculty Members</h1>
+        </div>
+
+        <div data-role="content">
+            <ul data-role="listview" data-inset="true">
+                <li>
+                    <img src="https://via.placeholder.com/80" alt="Professor">
+                    <h3>Dr. Robert Smith</h3>
+                    <p>Department of Computer Science</p>
+                </li>
+                <li>
+                    <img src="https://via.placeholder.com/80" alt="Professor">
+                    <h3>Prof. Mary Johnson</h3>
+                    <p>Department of Mathematics</p>
+                </li>
+                <li>
+                    <img src="https://via.placeholder.com/80" alt="Professor">
+                    <h3>Dr. James Wilson</h3>
+                    <p>Department of Electronics</p>
+                </li>
+            </ul>
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#home" data-icon="home">Home</a></li>
+                    <li><a href="#syllabus" data-icon="grid">Syllabus</a></li>
+                    <li><a href="#faculty" class="ui-btn-active" data-icon="user">Faculty</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Additional subject detail pages would follow similar structure -->
+</body>
+</html>

@@ -1,0 +1,13 @@
+.category-link {
+    color: #333;
+    text-decoration: none;
+}
+
+.category-link:hover {
+    color: #0d6efd;
+}
+
+.active-category {
+    font-weight: bold;
+    color: #0d6efd;
+}
